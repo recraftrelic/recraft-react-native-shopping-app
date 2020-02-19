@@ -24,10 +24,12 @@ const ChatTitleBar: React.FunctionComponent<Props> = ({
   return (
     <View>
       <View style={style.topContainer}>
-        <View style={[style.childContainer, style.centerContainer]}>
+        <View style={style.childContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.chatTitle}</ThemedText>
         </View>
-        <View style={[style.childContainer, style.leftContainer]}>
+      </View>
+      <View style={style.bottomContainer}>
+        <View style={style.childContainer}>
           <Switch trackColor={{
             false: theme.lightTextColor,
             true: theme.lightTextColor
@@ -43,44 +45,32 @@ export default ChatTitleBar;
 interface Style {
   topContainer: ViewStyle;
   childContainer: ViewStyle;
-  leftContainer: ViewStyle;
-  centerContainer: ViewStyle;
-  rightContainer: ViewStyle;
-  searchContainer: ViewStyle;
+  bottomContainer: ViewStyle;
   title: TextStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
   topContainer: {
-    justifyContent: "space-between",
-    flexDirection: "row",
+    flexDirection: 'row',
+    justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 10,
+    paddingTop: 250,
+  },
+  bottomContainer: {
+    flexDirection: 'row',
+    justifyContent: "center",
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 30,
+    paddingBottom: 30,
   },
   childContainer: {
-    flex: 1,
+    flexDirection: 'row',
     justifyContent: "center",
   },
-  leftContainer: {
-    alignItems: "flex-start",
-  },
-  centerContainer: {
-    alignItems: "center",
-  },
-  rightContainer: {
-    alignItems: "flex-end",
-  },
-  searchContainer: {
-    borderBottomWidth: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 10,
-  },
   title: {
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: "bold"
   }
 });

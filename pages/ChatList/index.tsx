@@ -28,9 +28,7 @@ const ChatList: React.FunctionComponent<Props> = ({
       <ChatTitleBar updateTheme={updateTheme} />
       <ScrollView>
         <ChatItem
-          userImageSource={{ uri: "https://picsum.photos/200" }}
-          userName="Amenda"
-          lastMessage={"Hey there!!!"}
+          userName="Next"
           onChatPress={goToChatDetails}
         />
       </ScrollView>
