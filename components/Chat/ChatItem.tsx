@@ -1,5 +1,7 @@
 import React from 'react';
 import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle } from 'react-native';
+import useTheme from "../../hooks/useTheme";
+import { AppTheme } from "../../config/DefaultConfig";
 import ThemedText from '../UI/ThemedText';
 
 interface Props {
@@ -11,10 +13,12 @@ const ChatItem: React.FunctionComponent<Props> = ({
     onChatPress,
     userName,
 }: Props) => {
+    const theme: AppTheme = useTheme();
+
     return (
         <TouchableOpacity onPress={onChatPress}>
             <View style={style.container}>
-                <ThemedText styleKey="textColor" style={style.userNameStyle}>{userName}</ThemedText>
+                <ThemedText styleKey="textColor" style={[style.userNameStyle, {borderColor: theme.lightBottomColor}]}>{userName}</ThemedText>
             </View>
         </TouchableOpacity>
     );
@@ -40,5 +44,6 @@ const style: Style = StyleSheet.create<Style>({
         paddingBottom: 10,
         paddingLeft: 25,
         paddingRight: 25,
+        
     }
 })
