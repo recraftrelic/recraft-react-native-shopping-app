@@ -8,7 +8,8 @@ import { Dispatch } from 'redux';
 import { AppTheme } from '../../config/DefaultConfig';
 
 interface Props extends RouteComponentProps {
-  dispatch: Dispatch
+  dispatch: Dispatch,
+  history
 }
 
 const BaseHome: React.FunctionComponent<Props> = ({

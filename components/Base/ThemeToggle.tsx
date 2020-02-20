@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, ViewStyle, StyleSheet, Switch, TextStyle } from 'react-native';
+import { View, TouchableOpacity, ViewStyle, StyleSheet, Switch, TextStyle, StatusBar } from 'react-native';
 import { AppTheme, lightTheme, darkTheme, AppConstants } from '../../config/DefaultConfig';
 import useTheme from '../../hooks/useTheme';
 import ThemedText from '../UI/ThemedText';
@@ -23,6 +23,7 @@ const ThemeToggle: React.FunctionComponent<Props> = ({
 
   return (
     <View>
+      <StatusBar barStyle={isDarkTheme ? "light-content" : "dark-content"} translucent={true} />
       <View style={style.topContainer}>
         <View style={style.childContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.title}</ThemedText>
