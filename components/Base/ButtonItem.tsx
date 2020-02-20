@@ -1,30 +1,30 @@
 import React from 'react';
-import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle } from 'react-native';
+import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle, StatusBar } from 'react-native';
 import useTheme from "../../hooks/useTheme";
 import { AppTheme } from "../../config/DefaultConfig";
 import ThemedText from '../UI/ThemedText';
 
 interface Props {
-    userName: string;
-    onChatPress?: (event: GestureResponderEvent) => void
+    label: string;
+    onButtonPress?: (event: GestureResponderEvent) => void
 };
 
-const ChatItem: React.FunctionComponent<Props> = ({
-    onChatPress,
-    userName,
+const ButtonItem: React.FunctionComponent<Props> = ({
+    onButtonPress,
+    label,
 }: Props) => {
     const theme: AppTheme = useTheme();
 
     return (
-        <TouchableOpacity onPress={onChatPress}>
+        <TouchableOpacity onPress={onButtonPress}>
             <View style={style.container}>
-                <ThemedText styleKey="textColor" style={[style.userNameStyle, {borderColor: theme.lightBottomColor}]}>{userName}</ThemedText>
+                <ThemedText styleKey="textColor" style={[style.userNameStyle, {borderColor: theme.lightBottomColor}]}>{label}</ThemedText>
             </View>
         </TouchableOpacity>
     );
 };
 
-export default ChatItem;
+export default ButtonItem;
 
 interface Style {
     container: ViewStyle;
@@ -39,11 +39,10 @@ const style: Style = StyleSheet.create<Style>({
     },
     userNameStyle: {
         fontWeight: "bold",
-        borderWidth: 1,
+        borderWidth: 2,
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 25,
         paddingRight: 25,
-        
     }
 })

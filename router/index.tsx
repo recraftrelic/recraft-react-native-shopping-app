@@ -3,8 +3,8 @@ import { ViewStyle, StyleSheet } from 'react-native';
 import { NativeRouter, Route, Switch } from "react-router-native";
 import { connect } from "react-redux";
 import BackHandlerHOC from '../components/HOC/BackHandlerHOC';
-import ChatList from '../pages/ChatList';
-import ChatDetails from '../pages/ChatDetails';
+import BaseHome from '../pages/BaseHome';
+import BaseNext from '../pages/BaseNext';
 import { ApplicationConfig } from '../config/DefaultConfig';
 import ConfigContext from '../config/AppConfigProvider';
 import ThemedView from '../components/UI/ThemedView';
@@ -23,8 +23,8 @@ const Router: React.FunctionComponent<Props> = ({
         <NativeRouter>
           <BackHandlerHOC>
             <Switch>
-              <Route exact path="/" component={ChatList} />
-              <Route exact path="/chat/" component={ChatDetails} />
+              <Route exact path="/" component={BaseHome} />
+              <Route exact path="/base/" component={BaseNext} />
             </Switch>
           </BackHandlerHOC>
         </NativeRouter>
