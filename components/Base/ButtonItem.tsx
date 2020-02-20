@@ -1,5 +1,5 @@
 import React from 'react';
-import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle, StatusBar } from 'react-native';
+import { GestureResponderEvent, StyleSheet, TouchableOpacity, View, ViewStyle, TextStyle } from 'react-native';
 import useTheme from "../../hooks/useTheme";
 import { AppTheme } from "../../config/DefaultConfig";
 import ThemedText from '../UI/ThemedText';
