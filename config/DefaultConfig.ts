@@ -9,7 +9,7 @@ export interface AppTheme {
 }
 
 export interface AppConstants {
-    chatTitle: string,
+    title: string,
 }
 
 export interface ApplicationConfig {
@@ -40,6 +40,6 @@ export const lightTheme: AppTheme = {
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
-      chatTitle: "Base App",
+      title: "Base App",
     }
 }

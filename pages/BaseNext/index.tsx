@@ -11,12 +11,10 @@ const BaseNext: React.FunctionComponent<RouteComponentProps> = ({
     }  
 
     return (
-        <>
         <Button
           label="Back"
           onButtonPress={goToBaseHome}
         />
-        </>
     );
 }
 

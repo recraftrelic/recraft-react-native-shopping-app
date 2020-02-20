@@ -17,12 +17,6 @@ const ButtonItem: React.FunctionComponent<Props> = ({
 
     return (
         <TouchableOpacity onPress={onButtonPress}>
-            <View>
-                <StatusBar
-                    translucent
-                    barStyle={theme ? "dark-content" : "light-content"}
-                 />
-            </View>
             <View style={style.container}>
                 <ThemedText styleKey="textColor" style={[style.userNameStyle, {borderColor: theme.lightBottomColor}]}>{label}</ThemedText>
             </View>
