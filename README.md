@@ -1,9 +1,9 @@
-React native Routing App
+Recraft React Native Base App Seed
 =======
 
-This Routing app is a boilerplate for any react native developer who wants to build a simple App.
+This base app is a boilerplate for any react native developer who wants to build a simple app.
 
-The goal of this boilerplate is to provide a simple functional routing app which can be reused with very little to no modification.
+The goal of this boilerplate is to provide a simple functional routing & theme app which can be reused with very little to no modification.
 
 Demo
 =======
@@ -21,8 +21,8 @@ Packages & Libraries used
 
 Steps to Run the Project in Development Mode
 =======
-Use the Below Commands to Clone the project and enter inside the Directory
-After that Install the Dependencies.
+Use the below commands to clone the project and enter inside the directory
+After that install the dependencies.
 ```
 git clone git@github.com:recraftrelic/recraft-react-native-base-app-seed.git
 cd recraft-react-native-base-app-seed.git
@@ -30,16 +30,23 @@ yarn install
 ```
 
 ### IOS
-We need to Install the Pods, After that we can run the App
+We can directly run the app
+```
+npx react-native run-ios
+```
+
+### Facing any error related to pods in ios
+We need to install the pods
 ```
 sudo gem install cocoapods
 cd ios
 pod install
+cd ..
 npx react-native run-ios
 ```
 
 ### Android
-We can directly run the App
+We can directly run the app
 ```
 npx react-native run-android
 ```

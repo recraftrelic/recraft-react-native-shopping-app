@@ -9,7 +9,7 @@ interface Props {
   updateTheme: (theme: AppTheme) => void
 }
 
-const ChatTitleBar: React.FunctionComponent<Props> = ({
+const ThemeToggle: React.FunctionComponent<Props> = ({
   updateTheme
 }: Props) => {
   const theme: AppTheme = useTheme();
@@ -40,7 +40,7 @@ const ChatTitleBar: React.FunctionComponent<Props> = ({
   )
 };
 
-export default ChatTitleBar;
+export default ThemeToggle;
 
 interface Style {
   topContainer: ViewStyle;

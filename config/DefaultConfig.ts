@@ -8,16 +8,7 @@ export interface AppTheme {
   alternateMessageBackgroundColor: string,
 }
 
-export interface AppDateFormats {
-  chatDateFormat: string,
-  chatHourDisplayFormat: string,
-  chatYesterdayText: string,
-}
-
 export interface AppConstants {
-    dateFormats?: AppDateFormats,
-    searchPlacerHolder: string,
-    messagePlacerHolder: string,
     chatTitle: string,
 }
 
@@ -49,13 +40,6 @@ export const lightTheme: AppTheme = {
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
-      dateFormats: {
-        chatDateFormat: "MM/DD/YY",
-        chatHourDisplayFormat: "hh:mm A",
-        chatYesterdayText: "Yesterday",
-      },
-      searchPlacerHolder: "Search Chats",
-      messagePlacerHolder: "Type Text here for message...",
-      chatTitle: "Base App"
+      chatTitle: "Base App",
     }
 }
