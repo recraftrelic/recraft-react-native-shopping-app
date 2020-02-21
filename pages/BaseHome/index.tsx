@@ -27,7 +27,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
     <>
       <ThemeToggle updateTheme={updateTheme} />
       <Button
-        label="Next"
+        label="Next page"
         onButtonPress={goToBaseNext}
       />
     </>

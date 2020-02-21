@@ -40,6 +40,6 @@ export const lightTheme: AppTheme = {
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
-      title: "Base App",
+      title: "Shopping App",
     }
 }
