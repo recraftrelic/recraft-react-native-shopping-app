@@ -10,6 +10,8 @@ export interface AppTheme {
 
 export interface AppConstants {
     title: string,
+    recraftLogo: string,
+    labelLogin: string,
 }
 
 export interface ApplicationConfig {
@@ -41,5 +43,8 @@ export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
       title: "Shopping App",
-    }
+      recraftLogo: "https://recraftrelic.com/images/Recraft_relic_web_logo_icon.png",
+      labelLogin: "Login",
+    },
+    
 }
