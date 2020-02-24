@@ -4,6 +4,7 @@ import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
+import FlatButton from '../../components/Base/FlatButton';
 
 interface Props {
 }
@@ -32,14 +33,17 @@ const Login: React.FunctionComponent<Props> = ({
       <View style={style.childContainer}>
         <TextInput
           style={style.inputContainer}
-          placeholder="Password"
+          placeholder="Enter Password"
           secureTextEntry={true}
         />
       </View>
       <View style={style.childContainer}>
         <ThemedText style={style.forgotPassword} styleKey="textColor">{"Forget your password?"}</ThemedText>
       </View>
-      {/* <RoundButton label="Submit" /> */}
+      <RoundButton label="SUBMIT" onPress={() => {alert("clicked")}}/>
+      <View style={style.childContainer}>
+        <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
+      </View>
     </View>
   )
 };
@@ -53,14 +57,15 @@ interface Style {
   bottomContainer: ViewStyle;
   inputContainer: TextStyle;
   inputLabel: TextStyle;
-  forgotPassword: TextStyle
+  forgotPassword: TextStyle;
   title: TextStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
   container: {
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 35,
+    paddingRight: 35,
+    fontSize: 16,
   },
   topContainer: {
     flexDirection: 'row',
@@ -79,25 +84,27 @@ const style: Style = StyleSheet.create<Style>({
     paddingBottom: 30,
   },
   inputLabel: {
-    width: 300,
+    width: "100%",
     color: "#aaaaaa",
-    fontSize: 12
+    fontSize: 13
   },
   childContainer: {
     flexDirection: 'row',
     justifyContent: "center",
   },
   forgotPassword : {
-    marginTop: 20
+    marginTop: 30,
+    marginBottom: 15,
+    fontSize: 16,
   },
   inputContainer: {
     height: 40,
     marginTop: 10,
-    width: 300,
+    width: "100%",
     marginBottom: 10,
-    borderColor: "#ffffff",
     borderBottomColor: "#dadada",
-    borderWidth: 2,
+    borderBottomWidth: 2,
+    fontSize: 16,
   },
   title: {
     fontSize: 28,

@@ -6,19 +6,23 @@ import ThemedText from '../UI/ThemedText';
 
 interface Props {
     label: string;
-    onButtonPress?: (event: GestureResponderEvent) => void
+    onPress?: (event: GestureResponderEvent) => void,
+    buttonStyle?: any,
+    labelStyle?: any,
 };
 
 const RoundButton: React.FunctionComponent<Props> = ({
-    onButtonPress,
+    onPress,
     label,
+    buttonStyle,
+    labelStyle,
 }: Props) => {
     const theme: AppTheme = useTheme();
 
     return (
-        <TouchableOpacity onPress={onButtonPress}>
-            <View style={style.container}>
-                <ThemedText styleKey="textColor" style={[style.userNameStyle, {borderColor: theme.lightBottomColor}]}>{label}</ThemedText>
+        <TouchableOpacity onPress={onPress}>
+            <View style={[style.container, {borderColor: theme.lightBottomColor}, buttonStyle]}>
+                <ThemedText styleKey="textColor" style={[style.userNameStyle, labelStyle]}>{label}</ThemedText>
             </View>
         </TouchableOpacity>
     );
@@ -36,17 +40,26 @@ const style: Style = StyleSheet.create<Style>({
         flexDirection: 'row',
         padding: 10,
         justifyContent: "center",
-        backgroundColor: "#ffffff",
+        borderRadius: 45,
+        borderWidth: 1,
+        borderColor: "#1da1f2",
+        backgroundColor: "#1da1f2",
+        shadowOffset:{ width: 0,  height: 8 },
+        shadowColor: 'black',
+        shadowOpacity: 0.2,
+        minWidth: 230,
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: 10,
+        marginBottom: 10,
     },
     userNameStyle: {
         fontWeight: "bold",
-        borderWidth: 5,
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 25,
-        paddingRight: 25,
-        borderRadius: 15,
+        paddingTop: 2,
+        paddingBottom: 2,
+        paddingLeft: 15,
+        fontSize: 16,
+        paddingRight: 15,
         color: "#ffffff",
-        backgroundColor: "#1da1f2",
     }
 })
