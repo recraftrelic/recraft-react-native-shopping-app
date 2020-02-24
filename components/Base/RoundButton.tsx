@@ -9,7 +9,7 @@ interface Props {
     onButtonPress?: (event: GestureResponderEvent) => void
 };
 
-const StyledButton: React.FunctionComponent<Props> = ({
+const RoundButton: React.FunctionComponent<Props> = ({
     onButtonPress,
     label,
 }: Props) => {
@@ -24,7 +24,7 @@ const StyledButton: React.FunctionComponent<Props> = ({
     );
 };
 
-export default StyledButton;
+export default RoundButton;
 
 interface Style {
     container: ViewStyle;

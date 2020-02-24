@@ -6,6 +6,7 @@ import useTheme from '../../hooks/useTheme';
 interface Props extends TextProps {
   children: React.ReactChild,
   styleKey: string,
+  style?: any,
 }
 
 const ThemedText: React.FunctionComponent<Props> = (props: Props) => {

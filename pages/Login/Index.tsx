@@ -1,57 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, ViewStyle, StyleSheet, Switch, TextStyle, StatusBar ,TextInput} from 'react-native';
-import { AppTheme, lightTheme, darkTheme, AppConstants } from '../../config/DefaultConfig';
-import useTheme from '../../hooks/useTheme';
+import React from 'react';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput } from 'react-native';
+import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
-import ImageComponent from '../../components/Base/ImageComponent';
-import StyledButton from '../../components/Base/StyledButton';
+import RoundButton from '../../components/Base/RoundButton';
 
 interface Props {
 }
 
 const Login: React.FunctionComponent<Props> = ({
 }: Props) => {
-  const theme: AppTheme = useTheme();
   const constants: AppConstants = useConstants();
 
   return (
-    <View>
+    <View style={style.container}>
       <View style={style.topContainer}>
-        <View style={style.childContainer}>
-          <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
-        </View>
+        <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
       </View>
-      <View style={style.bottomContainer}>
-        <View style={style.childContainer}>
+      <View style={style.childContainer}>
+      <ThemedText style={style.inputLabel} styleKey="textColor">{"User Name"}</ThemedText>
+      </View>
+      <View style={style.childContainer}>
         <TextInput
-          style={{height: 40, width: 200}}
+          style={style.inputContainer}
           placeholder="User Name"
         />
-        </View>
       </View>
-      <View style={style.bottomContainer}>
       <View style={style.childContainer}>
-         <TextInput
-          style={{height: 40, width: 200}}
+      <ThemedText style={style.inputLabel} styleKey="textColor">{"Password"}</ThemedText>
+      </View>
+      <View style={style.childContainer}>
+        <TextInput
+          style={style.inputContainer}
           placeholder="Password"
+          secureTextEntry={true}
         />
-        </View>
-        </View>
-        <View style={style.childContainer}>
-          <ThemedText styleKey="textColor">{"Forget your password"}</ThemedText>
-        </View>
-        <View>
-        <StyledButton
-        label="Submit"
-      />
-        </View>
-       
-        {/* <View>
-            <ImageComponent src={constants.recraftLogo} />
-            <ImageComponent src={constants.recraftLogo} />
-        </View> */}
-    
+      </View>
+      <View style={style.childContainer}>
+        <ThemedText style={style.forgotPassword} styleKey="textColor">{"Forget your password?"}</ThemedText>
+      </View>
+      {/* <RoundButton label="Submit" /> */}
     </View>
   )
 };
@@ -59,19 +47,28 @@ const Login: React.FunctionComponent<Props> = ({
 export default Login;
 
 interface Style {
+  container: ViewStyle;
   topContainer: ViewStyle;
   childContainer: ViewStyle;
   bottomContainer: ViewStyle;
+  inputContainer: TextStyle;
+  inputLabel: TextStyle;
+  forgotPassword: TextStyle
   title: TextStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
+  container: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
   topContainer: {
     flexDirection: 'row',
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 250,
+    paddingTop: 180,
+    marginBottom: 50,
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -81,12 +78,30 @@ const style: Style = StyleSheet.create<Style>({
     paddingTop: 30,
     paddingBottom: 30,
   },
+  inputLabel: {
+    width: 300,
+    color: "#aaaaaa",
+    fontSize: 12
+  },
   childContainer: {
     flexDirection: 'row',
     justifyContent: "center",
   },
+  forgotPassword : {
+    marginTop: 20
+  },
+  inputContainer: {
+    height: 40,
+    marginTop: 10,
+    width: 300,
+    marginBottom: 10,
+    borderColor: "#ffffff",
+    borderBottomColor: "#dadada",
+    borderWidth: 2,
+  },
   title: {
     fontSize: 28,
-    fontWeight: "bold"
+    fontWeight: "600",
+    color: "#54afee"
   }
 });
