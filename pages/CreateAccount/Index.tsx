@@ -1,4 +1,6 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-native';
+import { Dispatch } from 'redux';
 import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
@@ -6,31 +8,45 @@ import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+interface Props extends RouteComponentProps {
+    dispatch: Dispatch,
+    history
+  }
+
 // @ts-ignore
 const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
 
-interface Props {
-  forgetRoute: () => void;
-}
-
-const Login: React.FunctionComponent<Props> = ({
-  forgetRoute
+const CreateAccount: React.FunctionComponent<Props> = ({
+    history
 }: Props) => {
   const constants: AppConstants = useConstants();
+
+  const goToLogin = () => {
+    history.push('/login')
+  }
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
       <View style={style.container}>
         <View style={style.topContainer}>
-          <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
+          <ThemedText styleKey="textColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="textColor">{"User Name"}</ThemedText>
+          <ThemedText style={style.inputLabel} styleKey="textColor">{"Name"}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <TextInput
             style={style.inputContainer}
-            placeholder="User Name"
+            placeholder="Enter Name"
+          />
+        </View>
+        <View style={style.childContainer}>
+          <ThemedText style={style.inputLabel} styleKey="textColor">{"Email"}</ThemedText>
+        </View>
+        <View style={style.childContainer}>
+          <TextInput
+            style={style.inputContainer}
+            placeholder="Enter Email"
           />
         </View>
         <View style={style.childContainer}>
@@ -44,7 +60,7 @@ const Login: React.FunctionComponent<Props> = ({
           />
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={forgetRoute}>{"Forget your password?"}</ThemedText>
+          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={goToLogin}>{"Already have an account?"}</ThemedText>
         </View>
         <RoundButton label="SUBMIT" onPress={() => { alert("clicked") }} />
         <View style={style.childContainer}>
@@ -63,7 +79,7 @@ const Login: React.FunctionComponent<Props> = ({
   )
 };
 
-export default Login;
+export default CreateAccount;
 
 interface Style {
   container: ViewStyle;

@@ -12,6 +12,7 @@ export interface AppConstants {
     title: string,
     recraftLogo: string,
     labelLogin: string,
+    createAccountLabel: string,
 }
 
 export interface ApplicationConfig {
@@ -45,6 +46,7 @@ export const defaultConfig: ApplicationConfig = {
       title: "Shopping App",
       recraftLogo: "https://recraftrelic.com/images/Recraft_relic_web_logo_icon.png",
       labelLogin: "Login",
+      createAccountLabel: "Create your Account"
     },
     
 }

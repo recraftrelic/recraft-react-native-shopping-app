@@ -8,7 +8,6 @@ import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import ImageComponent from '../../components/Base/ImageComponent';
 import useConstants from '../../hooks/useConstants';
 import Login from '../Login/Index';
-import StyledButton from '../../components/Base/StyledButton';
 
 interface Props extends RouteComponentProps {
   dispatch: Dispatch,
@@ -22,7 +21,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
   const constants: AppConstants = useConstants();
 
   const goToBaseNext = () => {
-    history.push('/base')
+    history.push('/createAccount')
   }
 
   const updateTheme = (theme: AppTheme) => dispatch(setThemeAction(theme))
@@ -31,7 +30,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
     <>
       {/* <ThemeToggle updateTheme={updateTheme} /> */}
       {/* <ImageComponent src={constants.recraftLogo}/> */}
-      <Login />
+      <Login forgetRoute={goToBaseNext}/>
       {/* <StyledButton
         label="Submit"
         onButtonPress={goToBaseNext}

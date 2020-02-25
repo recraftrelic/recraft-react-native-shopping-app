@@ -4,7 +4,8 @@ import { AppTheme } from '../../config/DefaultConfig';
 import useTheme from '../../hooks/useTheme';
 
 interface Props extends ViewProps {
-  children: React.ReactChild
+  children: React.ReactChild;
+  style?: any;
 }
 
 const ThemedView: React.FunctionComponent<Props> = (props: Props) => {
