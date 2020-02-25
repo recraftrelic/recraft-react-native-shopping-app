@@ -28,7 +28,7 @@ const Login: React.FunctionComponent<Props> = ({
         <View style={style.childContainer}>
           <TextInput
             style={style.inputContainer}
-            placeholder="User Name"
+            placeholder="Enter User Name"
           />
         </View>
         <View style={style.childContainer}>
