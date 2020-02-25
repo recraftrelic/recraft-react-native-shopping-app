@@ -43,7 +43,7 @@ export const lightTheme: AppTheme = {
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
-      title: "Shopping App",
+      title: "RecraftShoppify App",
       recraftLogo: "https://recraftrelic.com/images/Recraft_relic_web_logo_icon.png",
       labelLogin: "Login",
       createAccountLabel: "Create your Account"
