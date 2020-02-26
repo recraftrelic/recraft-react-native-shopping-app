@@ -5,16 +5,15 @@ import { connect } from "react-redux";
 import { setThemeAction } from '../../store/reducers/config';
 import { Dispatch } from 'redux';
 import { AppTheme, AppConstants } from '../../config/DefaultConfig';
-import ImageComponent from '../../components/Base/ImageComponent';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
 
 // @ts-ignore
-const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
+const ImagePath = require("../../Recraftsoppify_app_dashboard.jpg");
 
 interface Props extends RouteComponentProps {
   dispatch: Dispatch,
@@ -27,7 +26,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
 
-  const goToBaseNext = () => {
+  const goToSignUp = () => {
     history.push('/createAccount')
   }
 
@@ -51,15 +50,15 @@ const BaseHome: React.FunctionComponent<Props> = ({
             <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
           </TouchableOpacity>
           <View style={style.topContainer}> 
-            <ImageComponent src={constants.recraftLogo}/>
+            <Image source={constants.recraftLogo}/>
           </View>
           <View style={style.childContainer}>
             <ThemedText styleKey="textColor" style={style.title}>{constants.title}</ThemedText>
           </View>
-          <RoundButton buttonStyle={style.button} label="LOGIN" onPress={() => { alert("clicked") }} />
-          <RoundButton buttonStyle={style.button} label="SIGN UP" onPress={() => { alert("clicked") }} />
+          <RoundButton buttonStyle={style.button} label="LOGIN" onPress={goToLogin} />
+          <RoundButton buttonStyle={style.button} label="SIGN UP" onPress={goToSignUp} />
           <View style={style.childContainer}>
-            <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Sign Up With"}</ThemedText>
+            <ThemedText style={style.footerText} styleKey="textColor">{"Or Sign Up With"}</ThemedText>
           </View>
           <View style={style.childContainer}>
             <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
@@ -81,10 +80,8 @@ interface Style {
   container: ViewStyle;
   topContainer: ViewStyle;
   childContainer: ViewStyle;
-  bottomContainer: ViewStyle;
   inputContainer: TextStyle;
-  inputLabel: TextStyle;
-  forgotPassword: TextStyle;
+  footerText: TextStyle;
   title: TextStyle;
   Icon: TextStyle;
   iconContainer: ViewStyle;
@@ -106,40 +103,27 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 150,
-    marginBottom: 10,
+    marginTop: 165,
+    marginBottom: 12,
   },
-  bottomContainer: {
-    flexDirection: 'row',
-    justifyContent: "center",
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 30,
-    paddingBottom: 30,
+  title: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: "#54afee",
+    marginBottom: 130,
   },
   button: {
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  inputLabel: {
-    width: "100%",
-    color: "#aaaaaa",
-    fontSize: 13
+    marginTop: 26,
+    marginBottom: 22,
   },
   childContainer: {
     flexDirection: 'row',
     justifyContent: "center",
   },
-  forgotPassword: {
-    marginTop: 30,
-    marginBottom: 15,
+  footerText: {
+    marginTop: 15,
+    marginBottom: 20,
     fontSize: 16,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "600",
-    color: "#54afee",
-    marginBottom: 110,
   },
   iconContainer: {
     borderRadius: 6,

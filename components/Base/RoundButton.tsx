@@ -21,7 +21,7 @@ const RoundButton: React.FunctionComponent<Props> = ({
 
     return (
         <TouchableOpacity onPress={onPress}>
-            <View style={[style.container, {borderColor: theme.lightBottomColor}, buttonStyle]}>
+            <View style={[style.container, { borderColor: theme.lightBottomColor }, buttonStyle]}>
                 <ThemedText styleKey="textColor" style={[style.userNameStyle, labelStyle]}>{label}</ThemedText>
             </View>
         </TouchableOpacity>
@@ -44,7 +44,7 @@ const style: Style = StyleSheet.create<Style>({
         borderWidth: 1,
         borderColor: "#1da1f2",
         backgroundColor: "#1da1f2",
-        shadowOffset:{ width: 0,  height: 8 },
+        shadowOffset: { width: 0, height: 8 },
         shadowColor: 'black',
         shadowOpacity: 0.2,
         minWidth: 230,

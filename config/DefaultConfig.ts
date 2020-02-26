@@ -40,11 +40,14 @@ export const lightTheme: AppTheme = {
   alternateMessageBackgroundColor: '#B0E0E6',
 }
 
+// @ts-ignore
+const Logo = require("../Recraftsoppify_logo.png")
+
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
     constants: {
-      title: "RecraftShoppify App",
-      recraftLogo: "https://recraftrelic.com/images/Recraft_relic_web_logo_icon.png",
+      title: "RecraftShoppify",
+      recraftLogo: Logo,
       labelLogin: "Login",
       createAccountLabel: "Create your Account"
     },
