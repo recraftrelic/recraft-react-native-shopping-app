@@ -57,9 +57,7 @@ const style: Style = StyleSheet.create<Style>({
         fontWeight: "bold",
         paddingTop: 2,
         paddingBottom: 2,
-        paddingLeft: 15,
         fontSize: 16,
-        paddingRight: 15,
         color: "#ffffff",
     }
 })

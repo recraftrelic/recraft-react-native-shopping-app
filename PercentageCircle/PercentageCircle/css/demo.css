@@ -1,0 +1,391 @@
+
+@import url(https://fonts.googleapis.com/css?family=Jaldi:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+body {
+    background:#f6f7f2 none repeat scroll 0 0;
+    color: #000;
+    font-family: "Raleway",sans-serif;
+    font-size: 100%;
+    line-height: 24px;
+    margin: 0;
+	padding:0;
+}
+
+a {
+	font-family: "Raleway",sans-serif;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #373e18;
+}
+
+.text-center{
+	text-align:center;	
+}
+
+
+/* tooltip*/
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+  position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+  content: attr(tooltip); /* magic! */
+  
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  
+  /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1ch 1.5ch;
+  border-radius: .3ch;
+  background: #333;
+  color: #fff;
+  z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+  left: 50%;
+  transform: translate(-50%, -.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^="down"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+  top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+  left: 50%;
+  transform: translate(-50%, .5em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333;
+  left: calc(0em - 5px);
+  transform: translate(-.5em, -50%);
+}
+[tooltip][flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-.5em, -50%);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333;
+  right: calc(0em - 5px);
+  transform: translate(.5em, -50%);
+}
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards;
+}
+
+
+/* header */
+.codeconveyHeader {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.codeconveyHeader h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 50px 0 40px;
+}
+
+.codeconveyHeader h1 span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 0.6em;
+	opacity: 0.7;
+}
+
+/* To Navigation Style */
+.codeconveyTop {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    padding: 32px 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+.codeconveyTop h1 {
+    color: #acabab;
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    text-transform: uppercase;
+}
+.codeconveyTop h1 span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.codeconveyTop ul {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+.codeconveyTop li{
+	list-style:none;	
+	display:inline-block;
+}
+.codeconveyTop li a {
+    background: #fafafa none repeat scroll 0 0;
+    color: #000;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 2px 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.codeconveyTop li a:hover{
+	background:#000;
+	color:#fff;
+}
+.codeconveyTop span.right {
+	float: right;
+}
+
+.codeconveyTop span.right a {
+	display: block;
+	float: left;
+	color:#fff;
+}
+.codeconveyDemos a,
+section button {
+	display: inline-block;
+	background: #a9a9a9;
+	color: #fff;
+	font-weight: 400;
+	padding: 10px 20px;
+	margin: 5px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.codeconveyDemos a:hover,
+.codeconveyDemos a:active,
+.codeconveyDemos a.current-demo {
+	background: #777;
+}
+
+
+section {
+    float: left;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 2em 0;
+    width: 100%;
+}
+section button {
+	border: none;
+	padding: 15px 30px;
+	outline: none;
+	background: #85b91e;
+}
+
+.content {
+    text-align:center;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+/* Related Items*/
+.related > a {
+	border: 1px solid #99cc33;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	color: #99cc33;
+	opacity: 0.8;
+	-webkit-transition: color 0.3s, border-color 0.3s;
+	transition: color 0.3s, border-color 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.related a:hover {
+	border-color: #82b222;
+	color: #82b222;
+}
+
+.related a img {
+	max-width: 100%;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+	font-size: 65%;
+	font-weight: 400;
+}
+
+.codecontainer {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Columns */
+
+.column{ float:left;}
+.colum_full{ width:100%;}
+.colum_6{ width:60%;}
+.colum_5{ width:50%;}
+.colum_4{ width:40%;}
+.colum_3{ width:30%;}
+.colum_2{ width:20%;}
+.colum_1{ width:10%;}
+
+.column_half{
+	float: left;
+    margin: 0 2%;
+    width: 46%;
+}
+
+@media (min-width: 768px) {
+  .codecontainer {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .codecontainer {
+    width: 1000px;
+  }
+}
+
+@media only screen and (min-width:240px) and (max-width: 768px){
+  .colum_5{
+	width:100%;  
+  }
+  .codeconveyTop h1 {
+    float: none;
+    text-transform: uppercase;
+	text-align:center;
+   }
+   .codeconveyTop ul {
+   	    margin: 18px 0 0;
+    	padding: 0;
+    	text-align: center;
+	}
+}
