@@ -28,7 +28,7 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
 
     return (
         <View style={style.container}>
-            <TouchableOpacity onPress={() => { alert("home") }}>
+            <TouchableOpacity onPress={backButton}>
                 <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
                     <Icon name="home" size={30} style={[style.Icon, { color: '#2b98ea' }]} />
                     <Text style={[style.IconTitle, { color: '#2b98ea' }]}>{"Home"}</Text>
@@ -80,28 +80,25 @@ const style: Style = StyleSheet.create<Style>({
         justifyContent: "space-around",
         backgroundColor: "#fff",
         position: 'absolute',
+        paddingTop: 8,
+        paddingBottom: 8,
+        bottom: 0,
+        flex: 1,
         width: '100%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        height: 50,
-        bottom: 10
+        alignItems: 'center',
+        borderTopWidth: 2,
+        borderColor: "#b3b3b3",
     },
     iconContainer: {
-        borderRadius: 6,
-        marginLeft: 'auto',
-        marginRight: 'auto',
         color: '#b3b3b3',
-        justifyContent: 'space-around',
-
+        alignItems: 'center'
     },
     Icon: {
         fontSize: 30,
         color: '#b3b3b3',
-        justifyContent: "center",
     },
     IconTitle: {
         color: '#b3b3b3',
         fontSize: 12,
-        marginTop: 10,
     }
 });

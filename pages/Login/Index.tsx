@@ -57,7 +57,7 @@ const Login: React.FunctionComponent<Props> = ({
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{"Forget your password?"}</ThemedText>
         </View>
-        <RoundButton label="SUBMIT" onPress={() => { alert("clicked") }} />
+        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={() => { alert("clicked") }} />
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
         </View>

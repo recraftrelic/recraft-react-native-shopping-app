@@ -115,6 +115,7 @@ const style: Style = StyleSheet.create<Style>({
   button: {
     marginTop: 26,
     marginBottom: 22,
+    minWidth: 230,
   },
   childContainer: {
     flexDirection: 'row',

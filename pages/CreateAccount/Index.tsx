@@ -70,7 +70,7 @@ const CreateAccount: React.FunctionComponent<Props> = ({
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={goToLogin}>{"Already have an account?"}</ThemedText>
         </View>
-        <RoundButton label="SUBMIT" onPress={() => { alert("clicked") }} />
+        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={() => { alert("clicked") }} />
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
         </View>
