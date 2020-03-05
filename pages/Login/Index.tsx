@@ -1,26 +1,37 @@
 import React from 'react';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground } from 'react-native';
+import { RouteComponentProps } from 'react-router-native';
+import { Dispatch } from 'redux';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // @ts-ignore
 const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
 
-interface Props {
-  forgetRoute: () => void;
+interface Props extends RouteComponentProps {
+  dispatch: Dispatch,
+  history
 }
 
 const Login: React.FunctionComponent<Props> = ({
-  forgetRoute
+  history
 }: Props) => {
   const constants: AppConstants = useConstants();
+
+  const backButton = () => {
+    history.push('/')
+  }
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
       <View style={style.container}>
+        <TouchableOpacity onPress={backButton}>
+          <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+        </TouchableOpacity>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
         </View>
@@ -44,7 +55,7 @@ const Login: React.FunctionComponent<Props> = ({
           />
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={forgetRoute}>{"Forget your password?"}</ThemedText>
+          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{"Forget your password?"}</ThemedText>
         </View>
         <RoundButton label="SUBMIT" onPress={() => { alert("clicked") }} />
         <View style={style.childContainer}>
@@ -52,7 +63,7 @@ const Login: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.childContainer}>
           <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
-            <Icon name="google" size={30} color="#900" style={style.Icon} />
+            <Icon name="google" size={30} color="#900" style={style.Icon} onPress={() => { alert("google") }} />
           </View>
           <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
             <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
@@ -78,6 +89,7 @@ interface Style {
   iconContainer: ViewStyle;
   containerBg: ViewStyle;
   containerImage: ViewStyle;
+  backIcon: ViewStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
@@ -92,7 +104,7 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 150,
+    marginTop: 150,
     marginBottom: 50,
   },
   bottomContainer: {
@@ -145,5 +157,12 @@ const style: Style = StyleSheet.create<Style>({
     padding: 15,
     color: '#fff',
     justifyContent: "center",
+  },
+  backIcon: {
+    fontSize: 25,
+    position: 'absolute',
+    top: 20,
+    left: 10,
+    color: '#000',
   }
 });

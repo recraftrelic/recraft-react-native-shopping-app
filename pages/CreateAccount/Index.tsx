@@ -1,12 +1,13 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -25,9 +26,16 @@ const CreateAccount: React.FunctionComponent<Props> = ({
     history.push('/login')
   }
 
+  const backButton = () => {
+    history.push('/')
+  }
+
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
       <View style={style.container}>
+        <TouchableOpacity onPress={backButton}>
+          <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+        </TouchableOpacity>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
         </View>
@@ -108,7 +116,7 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 150,
+    marginTop: 150,
     marginBottom: 50,
   },
   bottomContainer: {
@@ -161,5 +169,12 @@ const style: Style = StyleSheet.create<Style>({
     padding: 15,
     color: '#fff',
     justifyContent: "center",
+  },
+  backIcon: {
+    fontSize: 25,
+    position: 'absolute',
+    top: 20,
+    left: 10,
+    color: '#000',
   }
 });
