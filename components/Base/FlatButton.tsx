@@ -34,5 +34,6 @@ interface Style {
 const style: Style = StyleSheet.create<Style>({
     container: {
         borderRadius: 5,
+        minWidth: 230
     },
 })

@@ -47,7 +47,7 @@ const style: Style = StyleSheet.create<Style>({
         shadowOffset: { width: 0, height: 8 },
         shadowColor: 'black',
         shadowOpacity: 0.2,
-        minWidth: 230,
+        minWidth: 30,
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: 10,
@@ -57,9 +57,7 @@ const style: Style = StyleSheet.create<Style>({
         fontWeight: "bold",
         paddingTop: 2,
         paddingBottom: 2,
-        paddingLeft: 15,
         fontSize: 16,
-        paddingRight: 15,
         color: "#ffffff",
     }
 })
