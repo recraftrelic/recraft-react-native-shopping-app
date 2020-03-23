@@ -26,6 +26,11 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
         history.push('/')
     }
 
+    const goToShopping = () => {
+        history.push('/shopping')
+    }
+
+
     return (
         <View style={style.container}>
             <TouchableOpacity onPress={backButton}>
@@ -34,7 +39,7 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
                     <Text style={[style.IconTitle, { color: '#2b98ea' }]}>{"Home"}</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { alert("shop") }}>
+            <TouchableOpacity onPress={goToShopping}>
                 <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
                     <Icon name="shopping-cart" size={30} style={[style.Icon]} />
                     <Text style={style.IconTitle}>{"Shop"}</Text>
