@@ -7,10 +7,26 @@ import useTheme from "../../hooks/useTheme";
 
 interface Props extends RouteComponentProps { }
 
-const typeList = ["Woman", "Man", "Kids"]
+const productList = [
+    {
+        name: "Top heavy bag",
+        price: 20,
+        currency: '$'
+    },
+    {
+        name: "Top heavy bag",
+        price: 30,
+        currency: '$',
+    },
+    {
+        name: "Top heavy bag",
+        price: 40,
+        currency: '$',
+    }
+]
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg")
+import ImagePath from "../../shopping.jpg";
 
 
 const Shopping: React.FunctionComponent<Props> = ({
@@ -23,13 +39,19 @@ const Shopping: React.FunctionComponent<Props> = ({
             <View style={style.newItemListLabel}>
                 <Text style={[style.leftLabel, { color: theme.labelBgColor }]}>{constants.homePage.productLabel}</Text>
             </View>
-            <View style={style.newItemBox}>
+            <View style={style.newItemBoxContainer}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {typeList.map((res, index) => {
-                        return (<View key={index}>
-                            <Image style={[style.newItem]} source={ImagePath} />
-                            <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>
-                                <Text style={[style.itemTitleText, { color: theme.highlightTextColor }]}>{constants.homePage.productLabel}</Text>
+                    {productList.map((res, index) => {
+                        return (<View>
+                            <View key={index} style={style.newItemBox}>
+                                <Image style={[style.newItem]} source={ImagePath} />
+                                <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>
+                                    <Text style={[style.itemTitleText, { color: theme.highlightTextColor }]}>{constants.homePage.productLabel}</Text>
+                                </View>
+                            </View>
+                            <View style={style.productInfo}>
+                                <Text style={style.productInfoText}>{res.name}</Text>
+                                <Text style={[style.productInfoText, { color: 'red' }]}>Price {res.currency + res.price}</Text>
                             </View>
                         </View>
                         )
@@ -54,6 +76,9 @@ interface Style {
     newItem: ViewStyle;
     leftLabel: TextStyle;
     rightLabel: TextStyle;
+    newItemBoxContainer: ViewStyle;
+    productInfo: ViewStyle;
+    productInfoText: TextStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
@@ -77,6 +102,7 @@ const style: Style = StyleSheet.create<Style>({
         paddingLeft: 12,
         paddingRight: 12,
         paddingBottom: 10,
+        height: 210
     },
     newItemListLabel: {
         flex: 1,
@@ -84,8 +110,8 @@ const style: Style = StyleSheet.create<Style>({
     },
     leftLabel: {
         flex: 1,
-        fontSize: 25,
-        fontWeight: '700',
+        fontSize: 20,
+        fontWeight: '500',
         textAlign: 'left',
         textTransform: 'capitalize',
         paddingLeft: 5,
@@ -97,20 +123,24 @@ const style: Style = StyleSheet.create<Style>({
         paddingTop: 10,
         paddingRight: 5,
     },
-    newItemBox: {
+    newItemBoxContainer: {
         flex: 5,
+        overflow: 'hidden',
+    },
+    newItemBox: {
         flexDirection: 'row',
         fontSize: 25,
         fontWeight: '900',
         marginTop: 5,
         borderRadius: 15,
         overflow: 'hidden',
+        height: 120
     },
     newItem: {
         marginLeft: 6,
         marginRight: 6,
         width: 150,
-        height: '100%',
+        height: 120,
         borderRadius: 15
     },
     itemTitleView: {
@@ -124,5 +154,14 @@ const style: Style = StyleSheet.create<Style>({
     },
     itemTitleText: {
         fontWeight: '700',
+    },
+    productInfo: {
+        paddingLeft: 6,
+        paddingRight: 8,
+        fontSize: 20,
+    },
+    productInfoText: {
+        fontSize: 16,
+        fontWeight: 'normal',
     }
 });

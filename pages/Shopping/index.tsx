@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, Text } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, Text, ScrollView } from 'react-native';
 import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
@@ -31,12 +31,28 @@ const Shopping: React.FunctionComponent<Props> = ({
 
     return (
         <View style={style.mainContainer}>
-            <CategoryList />
-            <ListedItem />
-            <ListedItem />
-            <ListedItem />
-
-            <ListedItem />
+            <View style={style.firstView}>
+                <CategoryList />
+            </View>
+            <View style={style.secondView}>
+                <ScrollView style={style.listingItem}>
+                    <View style={style.items}>
+                        <ListedItem />
+                    </View>
+                    <View style={style.items}>
+                        <ListedItem />
+                    </View>
+                    <View style={style.items}>
+                        <ListedItem />
+                    </View>
+                    <View style={style.items}>
+                        <ListedItem />
+                    </View>
+                    <View style={style.items}>
+                        <ListedItem />
+                    </View>
+                </ScrollView>
+            </View>
             <FooterNavigation history={history} />
         </View>
     )
@@ -46,10 +62,10 @@ export default Shopping;
 
 interface Style {
     mainContainer: ViewStyle;
-    fistView: ViewStyle;
-    fistViewButton: ViewStyle;
-    fistViewText: TextStyle;
-    fistViewContent: ViewStyle;
+    firstView: ViewStyle;
+    secondView: ViewStyle;
+    items: ViewStyle;
+    listingItem: ViewStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
@@ -58,22 +74,21 @@ const style: Style = StyleSheet.create<Style>({
         margin: 0,
         flex: 1,
     },
-    fistView: {
-        flex: 3,
-        height: '100%',
+    firstView: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: "space-around",
     },
-    fistViewText: {
-        fontSize: 35,
-        fontWeight: '900',
+    secondView: {
+        flex: 8,
+        flexDirection: 'row',
+        marginBottom: 65
     },
-    fistViewButton: {
-        maxWidth: 180,
-        textAlign: 'center',
-        minWidth: 230,
+    listingItem: {
+        flexDirection: 'column',
     },
-    fistViewContent: {
-        position: 'absolute',
-        bottom: 30,
-        left: 20,
-    },
+    items: {
+        flexDirection: 'row',
+    }
+  
 });
