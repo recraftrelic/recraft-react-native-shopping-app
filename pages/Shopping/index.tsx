@@ -38,7 +38,7 @@ const Shopping: React.FunctionComponent<Props> = ({
             <View style={style.secondView}>
                 <ScrollView style={style.listingItem}>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ListedItem history={history}/>
                     </View>
                     <View style={style.items}>
                         <ListedItem />
