@@ -9,7 +9,7 @@ class MyCarousel extends Component {
         <Carousel 
         loop={true}
         animate={false}
-        indicatorAtBottom={false}
+        indicatorAtBottom={true}
         indicatorSpace={25}
         indicatorSize={40}
         inactiveIndicatorColor="#999999"

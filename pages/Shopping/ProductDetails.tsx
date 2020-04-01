@@ -70,9 +70,8 @@ const style: Style = StyleSheet.create<Style>({
         flex: 1,
     },
     fistViewList: {
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: 400,
+        flex: 3,
         backgroundColor: 'transparent',
     },
     fistView: {
