@@ -4,6 +4,7 @@ import { View, ViewStyle, StyleSheet, TextStyle, Image, Text, ScrollView } from 
 import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
+import Product from './Product';
 
 interface Props extends RouteComponentProps { }
 
@@ -26,7 +27,7 @@ const productList = [
 ]
 
 // @ts-ignore
-import ImagePath from "../../shopping.jpg";
+const ImagePath = require("../../shopping.jpg");
 
 
 const Shopping: React.FunctionComponent<Props> = ({
@@ -42,13 +43,10 @@ const Shopping: React.FunctionComponent<Props> = ({
             <View style={style.newItemBoxContainer}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     {productList.map((res, index) => {
-                        return (<View>
-                            <View key={index} style={style.newItemBox}>
-                                <Image style={[style.newItem]} source={ImagePath} />
-                                <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>
-                                    <Text style={[style.itemTitleText, { color: theme.highlightTextColor }]}>{constants.homePage.productLabel}</Text>
-                                </View>
-                            </View>
+                        return (<View key={index}>
+                            <Product 
+                                imageUrl= {ImagePath}
+                            />
                             <View style={style.productInfo}>
                                 <Text style={style.productInfoText}>{res.name}</Text>
                                 <Text style={[style.productInfoText, { color: 'red' }]}>Price {res.currency + res.price}</Text>
@@ -65,15 +63,11 @@ const Shopping: React.FunctionComponent<Props> = ({
 export default Shopping;
 
 interface Style {
-    itemTitleView: ViewStyle;
-    itemTitleText: TextStyle;
-    newItemBox: ViewStyle;
     secondView: ViewStyle;
     typeList: ViewStyle;
     newItemListLabel: ViewStyle;
     newItemList: ViewStyle;
     typeListTab: ViewStyle;
-    newItem: ViewStyle;
     leftLabel: TextStyle;
     rightLabel: TextStyle;
     newItemBoxContainer: ViewStyle;
@@ -126,34 +120,6 @@ const style: Style = StyleSheet.create<Style>({
     newItemBoxContainer: {
         flex: 5,
         overflow: 'hidden',
-    },
-    newItemBox: {
-        flexDirection: 'row',
-        fontSize: 25,
-        fontWeight: '900',
-        marginTop: 5,
-        borderRadius: 15,
-        overflow: 'hidden',
-        height: 120
-    },
-    newItem: {
-        marginLeft: 6,
-        marginRight: 6,
-        width: 150,
-        height: 120,
-        borderRadius: 15
-    },
-    itemTitleView: {
-        position: 'absolute',
-        top: 15,
-        left: 15,
-        borderRadius: 15,
-        padding: 2,
-        paddingLeft: 10,
-        paddingRight: 10,
-    },
-    itemTitleText: {
-        fontWeight: '700',
     },
     productInfo: {
         paddingLeft: 6,
