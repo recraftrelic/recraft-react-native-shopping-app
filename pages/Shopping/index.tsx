@@ -10,6 +10,7 @@ import useTheme from "../../hooks/useTheme";
 import HomePageProducts from '../Home/HomePageProducts';
 import CategoryList from './CategoryList'
 import ListedItem from './ListedItem'
+import ProductAdvertisement from './ProductAdvertisement';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -43,7 +44,13 @@ const Shopping: React.FunctionComponent<Props> = ({
                         <ListedItem />
                     </View>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ProductAdvertisement
+                            imageUrl={ImagePath}
+                            label1={constants.advertisement.label1}
+                            label2={constants.advertisement.label2}
+                            labelBuy={constants.advertisement.labelBuy}
+                            onPress={() => {alert("buy")}}
+                        />
                     </View>
                     <View style={style.items}>
                         <ListedItem />
@@ -90,5 +97,4 @@ const style: Style = StyleSheet.create<Style>({
     items: {
         flexDirection: 'row',
     }
-  
 });
