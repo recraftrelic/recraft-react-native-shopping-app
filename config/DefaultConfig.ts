@@ -32,7 +32,9 @@ export interface AppConstants {
     createAccountLabel: string,
     labelCheck: string,
     homePage: HomePageType,
-    advertisement: advertisementType
+    advertisement: advertisementType,
+    labelAddToCard: string,
+    labelBuyNow: string,
 }
 
 export interface ApplicationConfig {
@@ -56,7 +58,7 @@ export const darkTheme: AppTheme = {
 
 export const lightTheme: AppTheme = {
   backgroundColor: "#ffffff",
-  highlightColor: "green",
+  highlightColor: "grey",
   highlightTextColor: "#ffffff",
   buyButtonLink: "#ca2727",
   textColor: "#333",
@@ -89,7 +91,9 @@ export const defaultConfig: ApplicationConfig = {
         label1: "SHOP",
         label2: "NOW",
         labelBuy: "BUY",
-      } 
+      },
+      labelAddToCard: "ADD TO CARD",
+      labelBuyNow: "BUY NOW"
     },
     
 }
