@@ -2,6 +2,7 @@ export interface AppTheme {
   backgroundColor: string,
   highlightColor: string,
   highlightTextColor: string,
+  buyButtonLink: string,
   textColor: string,
   lightTextColor: string,
   lightBottomColor: string,
@@ -18,6 +19,12 @@ export interface HomePageType {
   labelSave: string,
 }
 
+export interface advertisementType {
+    label1: string,
+    label2: string,
+    labelBuy: string,
+}
+
 export interface AppConstants {
     title: string,
     recraftLogo: string,
@@ -25,6 +32,7 @@ export interface AppConstants {
     createAccountLabel: string,
     labelCheck: string,
     homePage: HomePageType,
+    advertisement: advertisementType
 }
 
 export interface ApplicationConfig {
@@ -36,6 +44,7 @@ export const darkTheme: AppTheme = {
   backgroundColor: "#000000",
   highlightColor: "grey",
   highlightTextColor: "#ffffff",
+  buyButtonLink: "#ca2727",
   textColor: "#fff",
   lightTextColor: "#b3b3b3",
   lightBottomColor: "#666666",
@@ -49,6 +58,7 @@ export const lightTheme: AppTheme = {
   backgroundColor: "#ffffff",
   highlightColor: "green",
   highlightTextColor: "#ffffff",
+  buyButtonLink: "#ca2727",
   textColor: "#333",
   lightTextColor: "#b3b3b3",
   lightBottomColor: "#e6e6e6",
@@ -74,7 +84,12 @@ export const defaultConfig: ApplicationConfig = {
         labelViewAll: "View All",
         labelFashion: "FASHION",
         labelSave: "SALE",
-      }
+      },
+      advertisement: {
+        label1: "SHOP",
+        label2: "NOW",
+        labelBuy: "BUY",
+      } 
     },
     
 }

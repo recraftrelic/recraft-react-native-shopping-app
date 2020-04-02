@@ -9,8 +9,6 @@ interface Props {
     key?: number,
 }
 
-
-
 const Product: React.FunctionComponent<Props> = ({
     productLabel,
     imageUrl,
