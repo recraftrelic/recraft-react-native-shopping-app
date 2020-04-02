@@ -6,6 +6,7 @@ import { setThemeAction } from '../../store/reducers/config';
 import { Dispatch } from 'redux';
 import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
+import useTheme from "../../hooks/useTheme";
 import RoundButton from '../../components/Base/RoundButton';
 import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -25,6 +26,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
   history
 }: Props) => {
   const constants: AppConstants = useConstants();
+  const theme: AppTheme = useTheme();
 
   const goToSignUp = () => {
     history.push('/createAccount')
@@ -47,7 +49,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
       <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
         <View style={style.container}>
           <TouchableOpacity onPress={backButton}>
-            <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+            <MaterialIcon name="arrow-left" size={30} color="#900" style={[style.backIcon, {color: theme.textColor}]} />
           </TouchableOpacity>
           <View style={style.topContainer}> 
             <Image source={constants.recraftLogo}/>
@@ -146,6 +148,5 @@ const style: Style = StyleSheet.create<Style>({
     position: 'absolute',
     top: 20,
     left: 10,
-    color: '#000',
   }
 });

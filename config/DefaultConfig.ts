@@ -6,6 +6,16 @@ export interface AppTheme {
   lightTextColor: string,
   lightBottomColor: string,
   alternateMessageBackgroundColor: string,
+  labelBgColor: string,
+  activeColor: string,
+  dangerColor: string,
+}
+
+export interface HomePageType {
+  productLabel: string,
+  labelViewAll: string,
+  labelFashion: string,
+  labelSave: string,
 }
 
 export interface AppConstants {
@@ -13,6 +23,8 @@ export interface AppConstants {
     recraftLogo: string,
     labelLogin: string,
     createAccountLabel: string,
+    labelCheck: string,
+    homePage: HomePageType,
 }
 
 export interface ApplicationConfig {
@@ -28,6 +40,9 @@ export const darkTheme: AppTheme = {
   lightTextColor: "#b3b3b3",
   lightBottomColor: "#666666",
   alternateMessageBackgroundColor: '#4682b4',
+  labelBgColor: "#fff",
+  activeColor: "activeColor",
+  dangerColor: "#e13e3d",
 }
 
 export const lightTheme: AppTheme = {
@@ -38,6 +53,9 @@ export const lightTheme: AppTheme = {
   lightTextColor: "#b3b3b3",
   lightBottomColor: "#e6e6e6",
   alternateMessageBackgroundColor: '#B0E0E6',
+  labelBgColor: "#000",
+  activeColor: "#37adf4",
+  dangerColor: "#e13e3d",
 }
 
 // @ts-ignore
@@ -49,7 +67,14 @@ export const defaultConfig: ApplicationConfig = {
       title: "RecraftShoppify",
       recraftLogo: Logo,
       labelLogin: "Login",
-      createAccountLabel: "Create your Account"
+      createAccountLabel: "Create your Account",
+      labelCheck: "CHECK",
+      homePage: {
+        productLabel: "NEW",
+        labelViewAll: "View All",
+        labelFashion: "FASHION",
+        labelSave: "SALE",
+      }
     },
     
 }
