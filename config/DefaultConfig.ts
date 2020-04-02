@@ -35,6 +35,9 @@ export interface AppConstants {
     advertisement: advertisementType,
     labelAddToCard: string,
     labelBuyNow: string,
+    labelBag: string,
+    labelDelivery: string,
+    labelTotal: string,
 }
 
 export interface ApplicationConfig {
@@ -93,7 +96,10 @@ export const defaultConfig: ApplicationConfig = {
         labelBuy: "BUY",
       },
       labelAddToCard: "ADD TO CARD",
-      labelBuyNow: "BUY NOW"
+      labelBuyNow: "BUY NOW",
+      labelBag: "My Bag", 
+      labelDelivery: "Delivery",
+      labelTotal: "Total",
     },
     
 }

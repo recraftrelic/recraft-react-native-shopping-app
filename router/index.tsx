@@ -13,6 +13,7 @@ import CreateAccount from '../pages/CreateAccount/Index';
 import Home from '../pages/Home/Index';
 import Shopping from '../pages/Shopping';
 import ProductDetails from '../pages/Shopping/ProductDetails';
+import Bag from '../pages/Bag';
 
 interface Props {
   configReducer: ApplicationConfig
@@ -34,7 +35,8 @@ const Router: React.FunctionComponent<Props> = ({
               <Route exact path="/createAccount/" component={CreateAccount} />
               <Route exact path="/home/" component={Home} />
               <Route path="/shopping/" component={Shopping} />
-              <Route exact path="/productDetails/" component={ProductDetails} />
+              <Route path="/productDetails/" component={ProductDetails} />
+              <Route path="/bag/" component={Bag} />
             </Switch>
           </BackHandlerHOC>
         </NativeRouter>
