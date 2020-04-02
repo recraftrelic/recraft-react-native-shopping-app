@@ -32,7 +32,10 @@ export interface AppConstants {
     createAccountLabel: string,
     labelCheck: string,
     homePage: HomePageType,
-    advertisement: advertisementType
+    advertisement: advertisementType,
+    labelBag: string,
+    labelDelivery: string,
+    labelTotal: string,
 }
 
 export interface ApplicationConfig {
@@ -89,7 +92,10 @@ export const defaultConfig: ApplicationConfig = {
         label1: "SHOP",
         label2: "NOW",
         labelBuy: "BUY",
-      } 
+      },
+      labelBag: "My Bag", 
+      labelDelivery: "Delivery",
+      labelTotal: "Total",
     },
     
 }
