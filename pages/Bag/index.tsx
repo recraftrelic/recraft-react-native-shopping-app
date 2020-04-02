@@ -1,6 +1,5 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
-import { Dispatch } from 'redux';
 import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
@@ -12,7 +11,6 @@ import BagItem from '../../components/Base/BagItem';
 import BagOption from '../../components/Base/BagOption';
 
 interface Props extends RouteComponentProps {
-  dispatch: Dispatch,
   history
 }
 
@@ -24,6 +22,10 @@ const Bag: React.FunctionComponent<Props> = ({
 
   const goToHome = () => {
     history.push('/home')
+  }
+
+  const goToPayment = () => {
+    history.push('/payment')
   }
 
   return (
@@ -50,7 +52,7 @@ const Bag: React.FunctionComponent<Props> = ({
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={style.checkoutButton}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={goToPayment}>
                 <ThemedText styleKey="textColor" style={style.checkoutStyle}>PROCEED TO SHIPPING</ThemedText>
               </TouchableOpacity>
             </View>
