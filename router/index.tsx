@@ -11,6 +11,7 @@ import ThemedView from '../components/UI/ThemedView';
 import Login from '../pages/Login/Index';
 import CreateAccount from '../pages/CreateAccount/Index';
 import Home from '../pages/Home/Index';
+import Shopping from '../pages/Shopping';
 
 interface Props {
   configReducer: ApplicationConfig
@@ -31,7 +32,7 @@ const Router: React.FunctionComponent<Props> = ({
               <Route exact path="/login/" component={Login} />
               <Route exact path="/createAccount/" component={CreateAccount} />
               <Route exact path="/home/" component={Home} />
-              
+              <Route path="/shopping/" component={Shopping} />
             </Switch>
           </BackHandlerHOC>
         </NativeRouter>
