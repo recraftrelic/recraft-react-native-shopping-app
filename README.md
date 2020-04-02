@@ -1,9 +1,10 @@
-Recraft React Native Base App Seed
-=======
+[<p align="center"><img width="150" src="./Recraftsoppify_logo.png"></p>](https://github.com/recraftrelic/recraft-react-native-shopping-app/)
 
-This base app is a boilerplate for any react native developer who wants to build a simple app.
+<h1 align="center">Recraft React Native Base App Seed</h1>
 
-The goal of this boilerplate is to provide a simple functional routing & theme app which can be reused with very little to no modification.
+<p align="center">This base app is a boilerplate for any react native developer who wants to build a simple app.</p>
+
+<p align="center">The goal of this boilerplate is to provide a simple functional routing & theme app which can be reused with very little to no modification.</p>
 
 Demo
 =======
@@ -54,6 +55,7 @@ npx react-native run-android
 Contributors
 =======
 * [manojsinghnegiwd](https://github.com/manojsinghnegiwd) - Manoj Singh Negi
+* [puranchand](https://github.com/puranchand) - Puran Chand
 * [yashkapoor8710](https://github.com/yashkapoor8710) - Yogesh Kapoor
 
 Sponsors
