@@ -32,7 +32,7 @@ const CommonModal: React.FunctionComponent<Props> = ({
                 </View>
                 <Text style={style.msg}>{constants.demoCartMsg}</Text>
                 <Text style={style.successText}>{constants.labelSuccess}</Text>
-                <RoundButton label={constants.labelCheckOut} buttonStyle={[style.checkOutButton, { backgroundColor: theme.highlightColor }]} onPress={submit}/>
+                <RoundButton label={constants.labelCheckout.toUpperCase()} buttonStyle={[style.checkOutButton, { backgroundColor: theme.highlightColor }]} onPress={submit}/>
             </View>
         </Modal>
     )

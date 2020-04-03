@@ -44,7 +44,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
     }
 
     const checkout = () => {
-        history.push('/bag/')
+        history.push('/checkout/')
     }
 
     const openModal = () => {
