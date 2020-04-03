@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ViewStyle, StyleSheet, TextStyle, Image, Text } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, Image, Text, TouchableOpacity } from 'react-native';
 import { AppTheme } from '../../config/DefaultConfig';
 import useTheme from "../../hooks/useTheme";
 
@@ -7,23 +7,25 @@ interface Props {
     productLabel?: string,
     imageUrl: string,
     key?: number,
+    goToDetails?: () => void,
 }
 
 const Product: React.FunctionComponent<Props> = ({
     productLabel,
     imageUrl,
-    key
+    key,
+    goToDetails
 }: Props) => {
     const theme: AppTheme = useTheme();
 
     return (
-        <View key={key} style={style.newItemBox}>
+        <TouchableOpacity key={key} style={style.newItemBox} onPress={goToDetails}>
             <Image style={[style.newItem]} source={imageUrl} />
             {productLabel ? 
             <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>
                 <Text style={[style.itemTitleText, { color: theme.highlightTextColor }]}>{productLabel}</Text>
             </View>: null}
-        </View>
+        </TouchableOpacity>
     )
 };
 

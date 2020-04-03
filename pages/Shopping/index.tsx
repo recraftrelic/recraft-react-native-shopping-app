@@ -26,10 +26,6 @@ const Shopping: React.FunctionComponent<Props> = ({
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
 
-    const goToLogin = () => {
-        history.push('/login')
-    }
-
     return (
         <View style={style.mainContainer}>
             <View style={style.firstView}>
@@ -38,10 +34,10 @@ const Shopping: React.FunctionComponent<Props> = ({
             <View style={style.secondView}>
                 <ScrollView style={style.listingItem}>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ListedItem history={history}/>
                     </View>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ListedItem history={history}/>
                     </View>
                     <View style={style.items}>
                         <ProductAdvertisement
@@ -53,10 +49,10 @@ const Shopping: React.FunctionComponent<Props> = ({
                         />
                     </View>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ListedItem history={history}/>
                     </View>
                     <View style={style.items}>
-                        <ListedItem />
+                        <ListedItem history={history}/>
                     </View>
                 </ScrollView>
             </View>

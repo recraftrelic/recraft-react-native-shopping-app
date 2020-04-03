@@ -6,7 +6,9 @@ import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
 import Product from './Product';
 
-interface Props extends RouteComponentProps { }
+interface Props { 
+    history: any;
+}
 
 const productList = [
     {
@@ -31,10 +33,14 @@ const ImagePath = require("../../shopping.jpg");
 
 
 const Shopping: React.FunctionComponent<Props> = ({
+    history,
 }: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
 
+    const goToDetails = () => {
+        history.push("/productDetails")
+    }
     return (
         <View style={style.newItemList}>
             <View style={style.newItemListLabel}>
@@ -46,6 +52,7 @@ const Shopping: React.FunctionComponent<Props> = ({
                         return (<View key={index}>
                             <Product 
                                 imageUrl= {ImagePath}
+                                goToDetails={goToDetails}
                             />
                             <View style={style.productInfo}>
                                 <Text style={style.productInfoText}>{res.name}</Text>
