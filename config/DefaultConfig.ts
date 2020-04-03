@@ -38,6 +38,8 @@ export interface AppConstants {
     labelBag: string,
     labelDelivery: string,
     labelTotal: string,
+    labelSubTotal: string,
+    labelCheckout: string,
 }
 
 export interface ApplicationConfig {
@@ -100,6 +102,8 @@ export const defaultConfig: ApplicationConfig = {
       labelBag: "My Bag", 
       labelDelivery: "Delivery",
       labelTotal: "Total",
+      labelSubTotal: "Sub-Total",
+      labelCheckout: "Checkout",
     },
     
 }

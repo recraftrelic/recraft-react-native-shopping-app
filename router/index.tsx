@@ -15,6 +15,7 @@ import Shopping from '../pages/Shopping';
 import ProductDetails from '../pages/Shopping/ProductDetails';
 import Bag from '../pages/Bag';
 import Payment from '../pages/Payment';
+import Checkout from '../pages/Checkout';
 
 interface Props {
   configReducer: ApplicationConfig
@@ -39,6 +40,7 @@ const Router: React.FunctionComponent<Props> = ({
               <Route path="/productDetails/" component={ProductDetails} />
               <Route path="/bag/" component={Bag} />
               <Route path="/payment/" component={Payment} />
+              <Route path="/checkout/" component={Checkout} />
             </Switch>
           </BackHandlerHOC>
         </NativeRouter>
