@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
 import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, Text, Dimensions, TouchableOpacity } from 'react-native';
@@ -8,6 +8,9 @@ import RoundButton from '../../components/Base/RoundButton';
 import useTheme from "../../hooks/useTheme";
 import CarouselComponent from '../../components/common/Carousel';
 import BackButton from '../../components/common/BackButton';
+// import Modal from '../../components/Modal';
+import Modal from 'react-native-modal';
+import CommonModal from '../../components/Modal/CommonModal';
 
 var width = Dimensions.get('window').width; //full width
 
@@ -34,9 +37,22 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 }: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
+    const [open, setOpen] = useState(false);
 
     const backButton = () => {
         history.push('/shopping/')
+    }
+
+    const checkout = () => {
+        history.push('/checkout/')
+    }
+
+    const openModal = () => {
+        setOpen(true)
+    }
+
+    const closeModal = () => {
+        setOpen(false)
     }
 
     const selectColors = (color: any[]) => {
@@ -85,9 +101,14 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 
             </View>
             <View style={style.productButtonRow}>
-                <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} />
+                <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
                 <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} />
             </View>
+            <CommonModal 
+                isOpen={open}
+                hideModal={closeModal}
+                submit={checkout}
+            />
         </View>
     )
 };

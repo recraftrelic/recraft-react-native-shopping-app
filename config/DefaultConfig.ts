@@ -38,6 +38,8 @@ export interface AppConstants {
     labelBag: string,
     labelDelivery: string,
     labelTotal: string,
+    labelSuccess: string,
+    demoCartMsg: string,
     labelSubTotal: string,
     labelCheckout: string,
 }
@@ -102,6 +104,8 @@ export const defaultConfig: ApplicationConfig = {
       labelBag: "My Bag", 
       labelDelivery: "Delivery",
       labelTotal: "Total",
+      labelSuccess: "SUCCESS !",
+      demoCartMsg: "1 item added in your cart",
       labelSubTotal: "Sub-Total",
       labelCheckout: "Checkout",
     },
