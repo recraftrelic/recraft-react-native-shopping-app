@@ -88,7 +88,6 @@ const style: Style = StyleSheet.create<Style>({
         paddingBottom: 70,
     },
     newItemListLabel: {
-        flex: 1,
         flexDirection: 'row',
     },
     leftLabel: {
