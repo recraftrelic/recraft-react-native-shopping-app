@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
@@ -32,9 +32,10 @@ const CreateAccount: React.FunctionComponent<Props> = ({
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
+      <ScrollView>
       <View style={style.container}>
         <TouchableOpacity onPress={backButton}>
-          <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+          <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon}/>
         </TouchableOpacity>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
@@ -83,6 +84,7 @@ const CreateAccount: React.FunctionComponent<Props> = ({
           </View>
         </View>
       </View>
+      </ScrollView>
     </ImageBackground>
   )
 };
@@ -102,6 +104,7 @@ interface Style {
   iconContainer: ViewStyle;
   containerBg: ViewStyle;
   containerImage: ViewStyle;
+  backIcon: ViewStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
@@ -172,9 +175,8 @@ const style: Style = StyleSheet.create<Style>({
   },
   backIcon: {
     fontSize: 25,
-    position: 'absolute',
-    top: 20,
-    left: 10,
+    paddingTop: 20,
+    paddingLeft: 10,
     color: '#000',
   }
 });

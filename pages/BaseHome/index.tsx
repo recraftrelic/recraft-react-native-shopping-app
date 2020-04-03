@@ -8,7 +8,7 @@ import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
 import RoundButton from '../../components/Base/RoundButton';
-import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpacity, Image } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
@@ -47,15 +47,13 @@ const BaseHome: React.FunctionComponent<Props> = ({
       {/* <ThemeToggle updateTheme={updateTheme} /> */}
       {/* <ImageComponent src={constants.recraftLogo}/> */}
       <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
+        <ScrollView>
         <View style={style.container}>
           <TouchableOpacity onPress={backButton}>
             <MaterialIcon name="arrow-left" size={30} color="#900" style={[style.backIcon, {color: theme.textColor}]} />
           </TouchableOpacity>
           <View style={style.topContainer}> 
-            <Image source={constants.recraftLogo}/>
-          </View>
-          <View style={style.childContainer}>
-            <ThemedText styleKey="textColor" style={style.title}>{constants.title}</ThemedText>
+            <Image source={constants.recraftLogo} style={{width: 300, height: 300}}/>
           </View>
           <RoundButton buttonStyle={style.button} label="LOGIN" onPress={goToLogin} />
           <RoundButton buttonStyle={style.button} label="SIGN UP" onPress={goToSignUp} />
@@ -71,6 +69,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
             </View>
           </View>
         </View>
+        </ScrollView>
       </ImageBackground>
     </>
   );
@@ -105,7 +104,7 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 165,
+    marginTop: 150,
     marginBottom: 12,
   },
   title: {
