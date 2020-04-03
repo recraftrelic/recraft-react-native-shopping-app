@@ -63,6 +63,8 @@ const style: Style = StyleSheet.create<Style>({
         alignItems: 'center',
         position: 'relative',
         borderRadius: 15,
+        marginLeft: 25,
+        marginRight: 25,
         height: 400,
     },
     backIcon: {
@@ -103,7 +105,7 @@ const style: Style = StyleSheet.create<Style>({
         position: 'relative',
     },
     successText: {
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: "bold",
         paddingTop: 10,
         paddingBottom: 8,
