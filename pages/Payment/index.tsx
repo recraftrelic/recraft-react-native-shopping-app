@@ -28,7 +28,7 @@ const Payment: React.FunctionComponent<Props> = ({
     <View style={style.mainContainer}>
       <ScrollView>
         <View style={style.contentContainer}>
-          <View style={[style.container, {paddingBottom: 10}]}>
+          <View style={[style.container, {paddingBottom: 10 ,paddingLeft: 10}]}>
             <View style={[style.childContainer, style.leftContainer]}>
               <TouchableOpacity onPress={backPress}>
                 <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />

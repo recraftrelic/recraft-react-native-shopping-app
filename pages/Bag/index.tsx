@@ -24,15 +24,15 @@ const Bag: React.FunctionComponent<Props> = ({
     history.push('/home')
   }
 
-  const goToPayment = () => {
-    history.push('/payment')
+  const goToCheckout = () => {
+    history.push('/checkout')
   }
 
   return (
     <View style={style.mainContainer}>
       <ScrollView>
         <View style={style.contentContainer}>
-          <View style={[style.container, {paddingBottom: 10}]}>
+          <View style={[style.container, {paddingBottom: 10, paddingLeft: 10}]}>
             <View style={[style.childContainer, style.leftContainer]}>
               <TouchableOpacity onPress={goToHome}>
                 <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
@@ -52,7 +52,7 @@ const Bag: React.FunctionComponent<Props> = ({
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={style.checkoutButton}>
-              <TouchableOpacity onPress={goToPayment}>
+              <TouchableOpacity onPress={goToCheckout}>
                 <ThemedText styleKey="textColor" style={style.checkoutStyle}>PROCEED TO SHIPPING</ThemedText>
               </TouchableOpacity>
             </View>
