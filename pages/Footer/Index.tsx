@@ -58,7 +58,7 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
                     <Text style={style.IconTitle}>{"Bag"}</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={goToDetails}>
+            <TouchableOpacity onPress={() => { alert("favorites")}}>
                 <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
                     <Icon name="heart" size={30} style={[style.Icon]} />
                     <Text style={style.IconTitle}>{"Favorites"}</Text>

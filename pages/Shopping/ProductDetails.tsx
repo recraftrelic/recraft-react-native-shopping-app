@@ -19,6 +19,7 @@ interface Props extends RouteComponentProps {
 
 // @ts-ignore
 const ImagePath = require("../../shopping.jpg")
+// @ts-ignore
 const ImageShopping = require("../../shoppingGirl.jpg")
 
 const productData = {
@@ -99,7 +100,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
             </View>
             <View style={style.productButtonRow}>
                 <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
-                <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} />
+                <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={checkout}/>
             </View>
             <CommonModal 
                 isOpen={open}
@@ -181,7 +182,7 @@ const style: Style = StyleSheet.create<Style>({
     },
     productSize: {
         padding: 8,
-        marginTop: 15,
+        marginTop: 10,
         borderWidth: 1,
         marginRight: 15,
         minWidth: 80,
