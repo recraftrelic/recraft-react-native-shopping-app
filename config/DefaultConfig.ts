@@ -78,7 +78,7 @@ export const lightTheme: AppTheme = {
 }
 
 // @ts-ignore
-const Logo = require("../Recraftsoppify_logo.png")
+const Logo = require("../recraftshoping-app-logo2.png")
 
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
