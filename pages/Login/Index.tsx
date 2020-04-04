@@ -26,6 +26,10 @@ const Login: React.FunctionComponent<Props> = ({
     history.push('/')
   }
 
+  const submitButton = () => {
+    history.push('/home/')
+  }
+
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
       <View style={style.container}>
@@ -57,7 +61,7 @@ const Login: React.FunctionComponent<Props> = ({
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{"Forget your password?"}</ThemedText>
         </View>
-        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={() => { alert("clicked") }} />
+        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={submitButton} />
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
         </View>

@@ -33,7 +33,7 @@ const BaseHome: React.FunctionComponent<Props> = ({
   }
 
   const goToLogin = () => {
-    history.push('/home')
+    history.push('/login')
   }
 
   const backButton = () => {
