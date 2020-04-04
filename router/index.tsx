@@ -36,7 +36,7 @@ const Router: React.FunctionComponent<Props> = ({
               <Route exact path="/login/" component={Login} />
               <Route exact path="/createAccount/" component={CreateAccount} />
               <Route exact path="/home/" component={Home} />
-              <Route path="/shopping/" component={Shopping} />
+              <Route exact path="/shopping/" component={Shopping} />
               <Route path="/productDetails/" component={ProductDetails} />
               <Route path="/bag/" component={Bag} />
               <Route path="/payment/" component={Payment} />

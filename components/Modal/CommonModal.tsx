@@ -22,6 +22,7 @@ const CommonModal: React.FunctionComponent<Props> = ({
     const constants: AppConstants = useConstants();
 
     return (
+        <View>
         <Modal isVisible={isOpen} style={style.mainContainer}>
             <View style={[style.container]}>
                 <TouchableOpacity onPress={hideModal} style={style.backIcon}>
@@ -35,6 +36,7 @@ const CommonModal: React.FunctionComponent<Props> = ({
                 <RoundButton label={constants.labelCheckout.toUpperCase()} buttonStyle={[style.checkOutButton, { backgroundColor: theme.highlightColor }]} onPress={submit}/>
             </View>
         </Modal>
+        </View>
     )
 };
 

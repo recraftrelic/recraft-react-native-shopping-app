@@ -8,11 +8,9 @@ import RoundButton from '../../components/Base/RoundButton';
 import useTheme from "../../hooks/useTheme";
 import CarouselComponent from '../../components/common/Carousel';
 import BackButton from '../../components/common/BackButton';
-// import Modal from '../../components/Modal';
-import Modal from 'react-native-modal';
 import CommonModal from '../../components/Modal/CommonModal';
 
-var width = Dimensions.get('window').width; //full width
+var screenWidth = Dimensions.get('window').width; //full width
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -73,8 +71,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 
     const renderImageList = (images: any[]) => {
         return (images.map((img, index) => {
-            return (
-                <View key={index} style={style.carouselRow}>
+            return (<View key={index} style={style.carouselRow}>
                     <ImageBackground source={img} style={{ width: '100%', height: '100%', opacity: 0.7}} />
                 </View>
             )
@@ -145,7 +142,7 @@ const style: Style = StyleSheet.create<Style>({
         flex: 3,
     },
     carouselRow: {
-        width: width,
+        width: screenWidth,
         flex: 1,
         backgroundColor: 'transparent',
         flexDirection: 'column',
