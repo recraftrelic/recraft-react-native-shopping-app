@@ -6,6 +6,7 @@ import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import useTheme from "../../hooks/useTheme";
+import CategoryList from "../Shopping/CategoryList"
 
 interface Props extends RouteComponentProps {}
 
@@ -14,7 +15,6 @@ const typeList = ["Woman", "Man", "Kids"]
 // @ts-ignore
 const ImagePath = require("../../shopping.jpg")
 
-
 const HomePageProducts: React.FunctionComponent<Props> = ({}: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
@@ -22,9 +22,7 @@ const HomePageProducts: React.FunctionComponent<Props> = ({}: Props) => {
     return (
         <View style={style.secondView}>
             <View style={style.typeList}>
-                {typeList.map((res, index) => {
-                    return <RoundButton key={index} buttonStyle={[style.typeListTab, { backgroundColor: theme.activeColor, borderColor: theme.activeColor }]} labelStyle={{ fontSize: 17, color: theme.highlightTextColor }} label={res} onPress={() => {console.log("Check")}} />
-                })}
+                <CategoryList />
             </View>
             <View style={style.newItemList}>
                 <View style={style.newItemListLabel}>
@@ -57,9 +55,8 @@ interface Style {
     newItemBox: ViewStyle;
     secondView: ViewStyle;
     typeList: ViewStyle;
-    newItemListLabel: ViewStyle;
     newItemList: ViewStyle;
-    typeListTab: ViewStyle;
+    newItemListLabel: ViewStyle;
     newItem: ViewStyle;
     leftLabel: TextStyle;
     rightLabel: TextStyle;
@@ -72,14 +69,9 @@ const style: Style = StyleSheet.create<Style>({
         justifyContent: 'flex-start',
     },
     typeList: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: "space-around",
-        padding: 10,
-    },
-    typeListTab: {
-        textAlign: 'center',
-        minWidth: 120,
+        flex: 1.5,
+        paddingLeft: 12,
+        paddingRight: 12,
     },
     newItemList: {
         flex: 2,

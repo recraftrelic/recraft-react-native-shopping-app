@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, ScrollView } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
@@ -33,9 +33,6 @@ const Login: React.FunctionComponent<Props> = ({
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
       <View style={style.container}>
-        <TouchableOpacity onPress={backButton}>
-          <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
-        </TouchableOpacity>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
         </View>
@@ -98,18 +95,22 @@ interface Style {
 
 const style: Style = StyleSheet.create<Style>({
   container: {
+    flex: 1,
     paddingLeft: 35,
     paddingRight: 35,
     fontSize: 16,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    justifyContent: "center",
+    alignItems: 'center',
   },
   topContainer: {
     flexDirection: 'row',
     justifyContent: "center",
+    alignItems: 'center',
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 150,
-    marginBottom: 50,
+    marginTop: 20,
+    marginBottom: 40,
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -129,7 +130,7 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: "center",
   },
   forgotPassword: {
-    marginTop: 30,
+    marginTop: 20,
     marginBottom: 15,
     fontSize: 16,
   },
@@ -137,7 +138,7 @@ const style: Style = StyleSheet.create<Style>({
     height: 40,
     marginTop: 10,
     width: "100%",
-    marginBottom: 10,
+    marginBottom: 15,
     borderBottomColor: "#dadada",
     borderBottomWidth: 2,
     fontSize: 16,
@@ -145,7 +146,7 @@ const style: Style = StyleSheet.create<Style>({
   title: {
     fontSize: 28,
     fontWeight: "600",
-    color: "#54afee"
+    color: "#54afee",
   },
   iconContainer: {
     borderRadius: 6,
@@ -154,7 +155,7 @@ const style: Style = StyleSheet.create<Style>({
     shadowOffset: { width: 0, height: 8 },
     shadowColor: 'black',
     shadowOpacity: 0.2,
-
+    elevation: 6,
   },
   Icon: {
     fontSize: 25,

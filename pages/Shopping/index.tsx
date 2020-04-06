@@ -81,6 +81,8 @@ const style: Style = StyleSheet.create<Style>({
         flex: 1.5,
         flexDirection: 'row',
         justifyContent: "space-around",
+        paddingLeft: 15,
+        paddingRight: 15,
     },
     secondView: {
         flex: 8,

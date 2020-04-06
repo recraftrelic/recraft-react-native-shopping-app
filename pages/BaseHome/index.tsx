@@ -12,6 +12,7 @@ import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpaci
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
+import BackButton from '../../components/common/BackButton';
 
 // @ts-ignore
 const ImagePath = require("../../Recraftsoppify_app_dashboard.jpg");
@@ -43,43 +44,40 @@ const BaseHome: React.FunctionComponent<Props> = ({
   const updateTheme = (theme: AppTheme) => dispatch(setThemeAction(theme))
 
   return (
-    <>
+    <View style={style.mainContainer}>
       {/* <ThemeToggle updateTheme={updateTheme} /> */}
       {/* <ImageComponent src={constants.recraftLogo}/> */}
-      <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
-        <ScrollView>
-        <View style={style.container}>
-          <TouchableOpacity onPress={backButton}>
-            <MaterialIcon name="arrow-left" size={30} color="#900" style={[style.backIcon, {color: theme.textColor}]} />
-          </TouchableOpacity>
-          <View style={style.topContainer}> 
-            <Image source={constants.recraftLogo} style={{width: 300, height: 300}}/>
-          </View>
-          <RoundButton buttonStyle={style.button} label="LOGIN" onPress={goToLogin} />
-          <RoundButton buttonStyle={style.button} label="SIGN UP" onPress={goToSignUp} />
-          <View style={style.childContainer}>
-            <ThemedText style={style.footerText} styleKey="textColor">{"Or Sign Up With"}</ThemedText>
-          </View>
-          <View style={style.childContainer}>
-            <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
-              <Icon name="google" size={30} color="#900" style={style.Icon} />
+        <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
+            <View style={style.topContainer}> 
+              <Image source={constants.recraftLogo} style={[style.logoImage ,{width: 300, height: 300}]}/>
             </View>
-            <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
-              <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
+            <View style={style.secondContainer}>
+              <RoundButton buttonStyle={style.button} label="LOGIN" onPress={goToLogin} />
+              <RoundButton buttonStyle={style.button} label="SIGN UP" onPress={goToSignUp} />
+              <View style={style.childContainer}>
+                <ThemedText style={style.footerText} styleKey="textColor">{"Or Sign Up With"}</ThemedText>
+              </View>
+              <View style={style.childContainer}>
+                <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
+                  <Icon name="google" size={30} color="#900" style={style.Icon} />
+                </View>
+                <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
+                  <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
+                </View>
+              </View>
             </View>
-          </View>
-        </View>
-        </ScrollView>
-      </ImageBackground>
-    </>
+        </ImageBackground>
+    </View>
   );
 };
 
 export default connect(({ dispatch }) => ({ dispatch }))(BaseHome);
 
 interface Style {
+  mainContainer : ViewStyle;
   container: ViewStyle;
   topContainer: ViewStyle;
+  secondContainer: ViewStyle;
   childContainer: ViewStyle;
   inputContainer: TextStyle;
   footerText: TextStyle;
@@ -90,22 +88,39 @@ interface Style {
   containerImage: ViewStyle;
   backIcon: ViewStyle;
   button: ViewStyle;
+  logoImage: ViewStyle;
 }
 
 const style: Style = StyleSheet.create<Style>({
-  container: {
-    paddingLeft: 35,
-    paddingRight: 35,
+  mainContainer: {
+    flex: 1,
+    padding: 0,
+    margin: 0,
     fontSize: 16,
-    backgroundColor: 'transparent'
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  logoImage: {
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: 0,
   },
   topContainer: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: "center",
+    justifyContent: 'center',
+    alignItems: "center",
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 150,
-    marginBottom: 12,
+  },
+  secondContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
@@ -114,7 +129,7 @@ const style: Style = StyleSheet.create<Style>({
     marginBottom: 130,
   },
   button: {
-    marginTop: 26,
+    marginTop: 15,
     marginBottom: 22,
     minWidth: 230,
   },

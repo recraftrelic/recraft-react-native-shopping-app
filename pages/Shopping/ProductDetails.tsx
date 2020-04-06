@@ -98,7 +98,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
                 </View>
 
             </View>
-            <View style={style.productButtonRow}>
+            <View style={style.row3}>
                 <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
                 <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={checkout}/>
             </View>
@@ -125,7 +125,7 @@ interface Style {
     productColor: ViewStyle;
     productSizesRow: ViewStyle;
     productSize: ViewStyle;
-    productButtonRow: ViewStyle;
+    row3: ViewStyle;
     productButton: ViewStyle;
 }
 
@@ -134,9 +134,10 @@ const style: Style = StyleSheet.create<Style>({
         padding: 0,
         margin: 0,
         flex: 1,
+        zIndex: -1,
     },
     row1: {
-        flex: 5,
+        flex: 4,
         zIndex: -1,
     },
     row2: {
@@ -188,22 +189,20 @@ const style: Style = StyleSheet.create<Style>({
         minWidth: 80,
         textAlign: 'center',
     },
-    productButtonRow: {
+    row3: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: 25,
         paddingRight: 25,
         position: 'absolute',
-        paddingTop: 8,
-        paddingBottom: 8,
-        bottom: 0,
+        bottom: 15,
         flex: 1,
         width: '100%',
         alignItems: 'center',
     },
     productButton: {
-        paddingLeft: 20,
-        paddingRight: 20,
-        minWidth: 160,
+        paddingLeft: 10,
+        paddingRight: 10,
+        minWidth: 140,
     }
 });
