@@ -73,7 +73,7 @@ export const lightTheme: AppTheme = {
   lightBottomColor: "#e6e6e6",
   alternateMessageBackgroundColor: '#B0E0E6',
   labelBgColor: "#000",
-  activeColor: "#37adf4",
+  activeColor: "#ec5c44",
   dangerColor: "#e13e3d",
 }
 

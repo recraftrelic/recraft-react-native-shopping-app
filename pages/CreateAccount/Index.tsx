@@ -166,7 +166,7 @@ const style: Style = StyleSheet.create<Style>({
   title: {
     fontSize: 28,
     fontWeight: "600",
-    color: "#54afee"
+    color: "#ec5c44"
   },
   iconContainer: {
     borderRadius: 6,

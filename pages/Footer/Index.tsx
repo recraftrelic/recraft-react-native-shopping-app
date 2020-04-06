@@ -42,8 +42,8 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
         <View style={style.container}>
             <TouchableOpacity onPress={backButton}>
                 <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="home" size={30} style={[style.Icon, { color: '#2b98ea' }]} />
-                    <Text style={[style.IconTitle, { color: '#2b98ea' }]}>{"Home"}</Text>
+                    <Icon name="home" size={30} style={[style.Icon, { color: '#ec5c44' }]} />
+                    <Text style={[style.IconTitle, { color: '#ec5c44' }]}>{"Home"}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToShopping}>
