@@ -160,9 +160,8 @@ const style: Style = StyleSheet.create<Style>({
   },
   backIcon: {
     fontSize: 25,
-    position: 'absolute',
-    top: 20,
-    left: 10,
+    paddingTop: 20,
+    paddingLeft: 10,
     color: '#000',
   }
 });
