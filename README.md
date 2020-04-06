@@ -1,6 +1,6 @@
-[<p align="center"><img width="150" src="./Recraftsoppify_logo.png"></p>](https://github.com/recraftrelic/recraft-react-native-shopping-app/)
+[<p align="center"><img width="150" src="./recraftshoping-app.png"></p>](https://github.com/recraftrelic/recraft-react-native-shopping-app/)
 
-<h1 align="center">Recraft React Native Base App Seed</h1>
+<h1 align="center">Recraft React Native Shopping App</h1>
 
 <p align="center">This base app is a boilerplate for any react native developer who wants to build a simple app.</p>
 
@@ -19,6 +19,10 @@ Packages & Libraries used
 * [React](https://www.npmjs.com/package/react)
 * [React router native](https://www.npmjs.com/package/react-router-native)
 * [TypeScript](https://www.npmjs.com/package/typescript)
+* [React native carousel](https://www.npmjs.com/package/react-native-carousel)
+* [React native modal](https://www.npmjs.com/package/react-native-modal)
+* [React native vector icons](https://www.npmjs.com/package/react-native-vector-icons)
+* [React native splash screen](https://www.npmjs.com/package/react-native-splash-screen)
 
 Steps to Run the Project in Development Mode
 =======
