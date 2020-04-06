@@ -1,13 +1,14 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, ScrollView } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, ScrollView, TouchableOpacity } from 'react-native';
 import { AppConstants } from '../../config/DefaultConfig';
 import ThemedText from '../../components/UI/ThemedText';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import BackButton from '../../components/common/BackButton';
 
 // @ts-ignore
 const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
@@ -32,7 +33,12 @@ const Login: React.FunctionComponent<Props> = ({
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
+      <TouchableOpacity onPress={backButton}>
+        <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon}/>
+      </TouchableOpacity>
+      <ScrollView>
       <View style={style.container}>
+     
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
         </View>
@@ -70,7 +76,9 @@ const Login: React.FunctionComponent<Props> = ({
             <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
           </View>
         </View>
+       
       </View>
+      </ScrollView>
     </ImageBackground>
   )
 };
@@ -109,8 +117,8 @@ const style: Style = StyleSheet.create<Style>({
     alignItems: 'center',
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 20,
-    marginBottom: 40,
+    marginTop: 80,
+    marginBottom: 20,
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -165,9 +173,8 @@ const style: Style = StyleSheet.create<Style>({
   },
   backIcon: {
     fontSize: 25,
-    position: 'absolute',
-    top: 20,
-    left: 10,
+    paddingTop: 20,
+    paddingLeft: 25,
     color: '#000',
   }
 });
