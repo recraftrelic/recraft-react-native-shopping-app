@@ -32,10 +32,10 @@ const CreateAccount: React.FunctionComponent<Props> = ({
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
-      <ScrollView style={style.mainContainer}>
         <TouchableOpacity onPress={backButton}>
           <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon}/>
         </TouchableOpacity>
+      <ScrollView style={style.mainContainer}>
       <View style={style.container}>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
