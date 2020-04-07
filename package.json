@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/viewpager": "^3.3.0",
     "mem": "^6.0.1",
     "npm": "^6.14.0",
     "react": "16.9.0",

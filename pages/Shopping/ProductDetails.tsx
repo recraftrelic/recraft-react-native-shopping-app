@@ -8,11 +8,9 @@ import RoundButton from '../../components/Base/RoundButton';
 import useTheme from "../../hooks/useTheme";
 import CarouselComponent from '../../components/common/Carousel';
 import BackButton from '../../components/common/BackButton';
-// import Modal from '../../components/Modal';
-import Modal from 'react-native-modal';
 import CommonModal from '../../components/Modal/CommonModal';
 
-var width = Dimensions.get('window').width; //full width
+var screenWidth = Dimensions.get('window').width; //full width
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -21,6 +19,7 @@ interface Props extends RouteComponentProps {
 
 // @ts-ignore
 const ImagePath = require("../../shopping.jpg")
+// @ts-ignore
 const ImageShopping = require("../../shoppingGirl.jpg")
 
 const productData = {
@@ -73,8 +72,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 
     const renderImageList = (images: any[]) => {
         return (images.map((img, index) => {
-            return (
-                <View key={index} style={style.carouselRow}>
+            return (<View key={index} style={style.carouselRow}>
                     <ImageBackground source={img} style={{ width: '100%', height: '100%', opacity: 0.7}} />
                 </View>
             )
@@ -100,9 +98,9 @@ const ProductDetails: React.FunctionComponent<Props> = ({
                 </View>
 
             </View>
-            <View style={style.productButtonRow}>
+            <View style={style.row3}>
                 <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
-                <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} />
+                <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={checkout}/>
             </View>
             <CommonModal 
                 isOpen={open}
@@ -127,7 +125,7 @@ interface Style {
     productColor: ViewStyle;
     productSizesRow: ViewStyle;
     productSize: ViewStyle;
-    productButtonRow: ViewStyle;
+    row3: ViewStyle;
     productButton: ViewStyle;
 }
 
@@ -136,16 +134,17 @@ const style: Style = StyleSheet.create<Style>({
         padding: 0,
         margin: 0,
         flex: 1,
+        zIndex: -1,
     },
     row1: {
-        flex: 5,
+        flex: 4,
         zIndex: -1,
     },
     row2: {
         flex: 3,
     },
     carouselRow: {
-        width: width,
+        width: screenWidth,
         flex: 1,
         backgroundColor: 'transparent',
         flexDirection: 'column',
@@ -184,28 +183,26 @@ const style: Style = StyleSheet.create<Style>({
     },
     productSize: {
         padding: 8,
-        marginTop: 15,
+        marginTop: 10,
         borderWidth: 1,
         marginRight: 15,
         minWidth: 80,
         textAlign: 'center',
     },
-    productButtonRow: {
+    row3: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: 25,
         paddingRight: 25,
         position: 'absolute',
-        paddingTop: 8,
-        paddingBottom: 8,
-        bottom: 0,
+        bottom: 15,
         flex: 1,
         width: '100%',
         alignItems: 'center',
     },
     productButton: {
-        paddingLeft: 20,
-        paddingRight: 20,
-        minWidth: 160,
+        paddingLeft: 10,
+        paddingRight: 10,
+        minWidth: 140,
     }
 });

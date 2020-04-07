@@ -39,7 +39,7 @@ const Shopping: React.FunctionComponent<Props> = ({
     const theme: AppTheme = useTheme();
 
     const goToDetails = () => {
-        history.push("/productDetails")
+        history.push("/productDetails/")
     }
     return (
         <View style={style.newItemList}>

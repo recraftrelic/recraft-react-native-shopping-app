@@ -32,11 +32,11 @@ const CreateAccount: React.FunctionComponent<Props> = ({
 
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
-      <ScrollView>
-      <View style={style.container}>
         <TouchableOpacity onPress={backButton}>
           <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon}/>
         </TouchableOpacity>
+      <ScrollView style={style.mainContainer}>
+      <View style={style.container}>
         <View style={style.topContainer}>
           <ThemedText styleKey="textColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
         </View>
@@ -92,6 +92,7 @@ const CreateAccount: React.FunctionComponent<Props> = ({
 export default CreateAccount;
 
 interface Style {
+  mainContainer: ViewStyle,
   container: ViewStyle;
   topContainer: ViewStyle;
   childContainer: ViewStyle;
@@ -108,19 +109,28 @@ interface Style {
 }
 
 const style: Style = StyleSheet.create<Style>({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
   container: {
+    flex: 1,
     paddingLeft: 35,
     paddingRight: 35,
     fontSize: 16,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    flexDirection: 'column',
+    justifyContent: "center",
+    alignItems: 'center',
   },
   topContainer: {
     flexDirection: 'row',
     justifyContent: "center",
+    alignItems: 'center',
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 150,
-    marginBottom: 50,
+    marginTop: 50,
+    marginBottom: 40,
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -176,7 +186,7 @@ const style: Style = StyleSheet.create<Style>({
   backIcon: {
     fontSize: 25,
     paddingTop: 20,
-    paddingLeft: 10,
+    paddingLeft: 25,
     color: '#000',
   }
 });
