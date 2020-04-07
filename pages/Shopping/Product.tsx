@@ -8,18 +8,20 @@ interface Props {
     imageUrl: string,
     key?: number,
     goToDetails?: () => void,
+    productStyle?: any,
 }
 
 const Product: React.FunctionComponent<Props> = ({
     productLabel,
     imageUrl,
     key,
-    goToDetails
+    goToDetails,
+    productStyle
 }: Props) => {
     const theme: AppTheme = useTheme();
 
     return (
-        <TouchableOpacity key={key} style={style.newItemBox} onPress={goToDetails}>
+        <TouchableOpacity key={key} style={[style.newItemBox, productStyle]} onPress={goToDetails}>
             <Image style={[style.newItem]} source={imageUrl} />
             {productLabel ? 
             <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>

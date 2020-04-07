@@ -30,6 +30,10 @@ const CreateAccount: React.FunctionComponent<Props> = ({
     history.push('/')
   }
 
+  const gotoHome = () => {
+    history.push('/home')
+  }
+
   return (
     <ImageBackground source={ImagePath} style={{ width: '100%', height: '100%' }} >
         <TouchableOpacity onPress={backButton}>
@@ -71,16 +75,16 @@ const CreateAccount: React.FunctionComponent<Props> = ({
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={goToLogin}>{"Already have an account?"}</ThemedText>
         </View>
-        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={() => { alert("clicked") }} />
+        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={gotoHome} />
         <View style={style.childContainer}>
           <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
-            <Icon name="google" size={30} color="#900" style={style.Icon} />
+            <Icon name="google" size={30} color="#900" style={style.Icon} onPress={()=> {alert("google")}}/>
           </View>
           <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
-            <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
+            <Icon name="facebook" size={30} color="#900" style={[style.Icon]} onPress={()=> {alert("facebook")}}/>
           </View>
         </View>
       </View>

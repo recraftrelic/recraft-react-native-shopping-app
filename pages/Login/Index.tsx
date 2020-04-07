@@ -37,47 +37,45 @@ const Login: React.FunctionComponent<Props> = ({
         <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon}/>
       </TouchableOpacity>
       <ScrollView>
-      <View style={style.container}>
-     
-        <View style={style.topContainer}>
-          <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
-        </View>
-        <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="textColor">{"User Name"}</ThemedText>
-        </View>
-        <View style={style.childContainer}>
-          <TextInput
-            style={style.inputContainer}
-            placeholder="User Name"
-          />
-        </View>
-        <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="textColor">{"Password"}</ThemedText>
-        </View>
-        <View style={style.childContainer}>
-          <TextInput
-            style={style.inputContainer}
-            placeholder="Enter Password"
-            secureTextEntry={true}
-          />
-        </View>
-        <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{"Forget your password?"}</ThemedText>
-        </View>
-        <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={submitButton} />
-        <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
-        </View>
-        <View style={style.childContainer}>
-          <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
-            <Icon name="google" size={30} color="#900" style={style.Icon} onPress={() => { alert("google") }} />
+        <View style={style.container}>
+          <View style={style.topContainer}>
+            <ThemedText styleKey="textColor" style={style.title}>{constants.labelLogin}</ThemedText>
           </View>
-          <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
-            <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
+          <View style={style.childContainer}>
+            <ThemedText style={style.inputLabel} styleKey="textColor">{"User Name"}</ThemedText>
+          </View>
+          <View style={style.childContainer}>
+            <TextInput
+              style={style.inputContainer}
+              placeholder="User Name"
+            />
+          </View>
+          <View style={style.childContainer}>
+            <ThemedText style={style.inputLabel} styleKey="textColor">{"Password"}</ThemedText>
+          </View>
+          <View style={style.childContainer}>
+            <TextInput
+              style={style.inputContainer}
+              placeholder="Enter Password"
+              secureTextEntry={true}
+            />
+          </View>
+          <View style={style.childContainer}>
+            <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{"Forget your password?"}</ThemedText>
+          </View>
+          <RoundButton label="SUBMIT" buttonStyle={{minWidth: 230}} onPress={submitButton} />
+          <View style={style.childContainer}>
+            <ThemedText style={style.forgotPassword} styleKey="textColor">{"Or Login With"}</ThemedText>
+          </View>
+          <View style={style.childContainer}>
+            <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
+              <Icon name="google" size={30} color="#900" style={style.Icon} onPress={() => { alert("google") }} />
+            </View>
+            <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
+              <Icon name="facebook" size={30} color="#900" style={[style.Icon]} onPress={() => { alert("google") }}/>
+            </View>
           </View>
         </View>
-       
-      </View>
       </ScrollView>
     </ImageBackground>
   )

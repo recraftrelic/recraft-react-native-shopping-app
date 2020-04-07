@@ -63,6 +63,12 @@ const style: Style = StyleSheet.create<Style>({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
+        backgroundColor: "#ec5c44",
+        shadowOffset: { width: 2, height: 3 },
+        shadowColor: 'black',
+        shadowOpacity: 0.2,
+        borderWidth: 0.1,
+        elevation: 4,
     },
     newItem: {
         marginLeft: 6,
@@ -91,8 +97,8 @@ const style: Style = StyleSheet.create<Style>({
         paddingRight: 10,
     },
     itemTitleText: {
-        fontWeight: '800',
-        fontSize: 18,
+        fontWeight: 'bold',
+        fontSize: 20,
     },
     linkText: {
         fontWeight: '700',

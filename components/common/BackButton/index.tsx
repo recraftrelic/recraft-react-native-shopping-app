@@ -6,17 +6,18 @@ import useTheme from '../../../hooks/useTheme';
 
 interface Props {
     onPress: () => void;
+    iconStyle?: any;
 };
 
 const BackButton: React.FunctionComponent<Props> = ({
     onPress,
-
+    iconStyle
 }) => {
     const theme: AppTheme = useTheme();
     
     return (
         <TouchableOpacity onPress={onPress}>
-            <MaterialIcon name="arrow-left" size={30} color="#900" style={[style.backIcon, {color: theme.textColor}]} />
+            <MaterialIcon name="arrow-left" size={30} color="#900" style={[iconStyle, style.backIcon, {color: theme.textColor}]} />
         </TouchableOpacity>
     )
 };

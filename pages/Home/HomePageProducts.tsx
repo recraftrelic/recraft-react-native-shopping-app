@@ -7,17 +7,30 @@ import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
 import useTheme from "../../hooks/useTheme";
 import CategoryList from "../Shopping/CategoryList"
+import Product from '../Shopping/Product';
 
-interface Props extends RouteComponentProps {}
+interface Props extends RouteComponentProps {
+    history: any;
+}
 
 const typeList = ["Woman", "Man", "Kids"]
 
 // @ts-ignore
 const ImagePath = require("../../shopping.jpg")
 
-const HomePageProducts: React.FunctionComponent<Props> = ({}: Props) => {
+const HomePageProducts: React.FunctionComponent<Props> = ({
+    history
+}: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
+
+    const gotoViewAll = () => {
+        history.push('/shopping')
+    }
+
+    const gotoProductDetails = () => {
+        history.push('/productDetails')
+    }
 
     return (
         <View style={style.secondView}>
@@ -27,16 +40,13 @@ const HomePageProducts: React.FunctionComponent<Props> = ({}: Props) => {
             <View style={style.newItemList}>
                 <View style={style.newItemListLabel}>
                     <Text style={[style.leftLabel, { color: theme.labelBgColor }]}>{constants.homePage.productLabel}</Text>
-                    <Text style={[style.rightLabel, { color: theme.activeColor }]}>{constants.homePage.labelViewAll}</Text>
+                    <Text style={[style.rightLabel, { color: theme.activeColor }]} onPress={gotoViewAll}>{constants.homePage.labelViewAll}</Text>
                 </View>
                 <View style={style.newItemBox}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         {typeList.map((res, index) => {
-                            return (<View key={index}>
-                                <Image style={[style.newItem]} source={ImagePath} />
-                                <View style={[style.itemTitleView, { backgroundColor: theme.labelBgColor }]}>
-                                    <Text style={[style.itemTitleText, { color: theme.highlightTextColor }]}>{constants.homePage.productLabel}</Text>
-                                </View>
+                            return (<View key={index} style={{zIndex: 9}}>
+                                <Product imageUrl={ImagePath} goToDetails={gotoProductDetails} productLabel={constants.homePage.productLabel} />
                             </View>
                             )
                         })}
