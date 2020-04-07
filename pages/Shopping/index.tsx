@@ -19,6 +19,8 @@ interface Props extends RouteComponentProps {
 
 // @ts-ignore
 const ImagePath = require("../../shopping.jpg")
+// @ts-ignore
+const advertisementImage = require("../../shoppingFlipkart.jpg")
 
 const Shopping: React.FunctionComponent<Props> = ({
     history
@@ -41,7 +43,7 @@ const Shopping: React.FunctionComponent<Props> = ({
                     </View>
                     <View style={style.items}>
                         <ProductAdvertisement
-                            imageUrl={ImagePath}
+                            imageUrl={advertisementImage}
                             label1={constants.advertisement.label1}
                             label2={constants.advertisement.label2}
                             labelBuy={constants.advertisement.labelBuy}

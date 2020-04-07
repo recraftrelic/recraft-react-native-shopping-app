@@ -23,10 +23,10 @@ const Home: React.FunctionComponent<Props> = ({
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
 
-    const goToLogin = () => {
-        history.push('/login')
+    const gotoProducts = () => {
+        history.push('/shopping')
     }
-
+ 
     return (
         <View style={style.mainContainer}>
             <View style={style.fistView}>
@@ -34,11 +34,11 @@ const Home: React.FunctionComponent<Props> = ({
                     <View style={style.fistViewContent}>
                         <Text style={[style.fistViewText, { color: theme.labelBgColor }]}>{constants.homePage.labelFashion}</Text>
                         <Text style={[style.fistViewText, { color: theme.labelBgColor }]}>{constants.homePage.labelSave}</Text>
-                        <RoundButton buttonStyle={[style.fistViewButton, { backgroundColor: theme.dangerColor, borderColor: theme.dangerColor }]} labelStyle={{ fontSize: 17, color: theme.labelBgColor }} label={constants.labelCheck} onPress={goToLogin} />
+                        <RoundButton buttonStyle={[style.fistViewButton, { backgroundColor: theme.dangerColor, borderColor: theme.dangerColor }]} labelStyle={{ fontSize: 17, color: theme.labelBgColor }} label={constants.labelCheck} onPress={gotoProducts} />
                     </View>
                 </ImageBackground>
             </View>
-            <HomePageProducts />
+            <HomePageProducts history={history}/>
             <FooterNavigation history={history} />
         </View>
     )
