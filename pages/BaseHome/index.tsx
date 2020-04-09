@@ -15,7 +15,7 @@ import ThemedText from '../../components/UI/ThemedText';
 import BackButton from '../../components/common/BackButton';
 
 // @ts-ignore
-const ImagePath = require("../../Recraftsoppify_app_dashboard.jpg");
+const ImagePath = require("../../images/Recraftsoppify_app_dashboard.jpg");
 
 interface Props extends RouteComponentProps {
   dispatch: Dispatch,

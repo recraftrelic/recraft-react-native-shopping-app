@@ -13,7 +13,7 @@ interface Props extends RouteComponentProps {
 }
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg")
+const ImagePath = require("../../images/shopping.jpg")
 
 const Checkout: React.FunctionComponent<Props> = ({
   history

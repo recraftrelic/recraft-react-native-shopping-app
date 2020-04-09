@@ -11,7 +11,7 @@ interface Props extends RouteComponentProps {
 }
 
 // @ts-ignore
-const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
+const ImagePath = require("../../images/Recraftsoppify_aap_bg_effect.png")
 
 const FooterNavigation: React.FunctionComponent<Props> = ({
     history

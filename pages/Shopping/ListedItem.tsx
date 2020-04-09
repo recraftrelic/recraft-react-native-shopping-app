@@ -29,7 +29,7 @@ const productList = [
 ]
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg");
+const ImagePath = require("../../images/shopping.jpg");
 
 
 const Shopping: React.FunctionComponent<Props> = ({

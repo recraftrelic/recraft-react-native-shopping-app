@@ -12,7 +12,7 @@ interface Props {
 };
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg")
+const ImagePath = require("../../images/shopping.jpg")
 
 const BagItem: React.FunctionComponent<Props> = ({
     size,

@@ -18,7 +18,7 @@ interface Props extends RouteComponentProps {
 }
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg")
+const ImagePath = require("../../images/shopping.jpg")
 // @ts-ignore
 const advertisementImage = require("../../shoppingFlipkart.jpg")
 

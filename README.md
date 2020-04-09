@@ -2,9 +2,12 @@
 
 <h1 align="center">Recraft React Native Shopping App</h1>
 
-<p align="center">This base app is a boilerplate for any react native developer who wants to build a simple app.</p>
+<p align="center">This shopping app is a boilerplate for any react native developer who wants to build a shopping app. The goal of this boilerplate is to provide a fully functional shopping app which can be reused with very little to no modification.</p>
 
-<p align="center">The goal of this boilerplate is to provide a simple functional routing & theme app which can be reused with very little to no modification.</p>
+Note
+=======
+
+> You can also get the app on play store 
 
 IOS Demo
 =======
@@ -27,14 +30,14 @@ Android Demo
 Packages & Libraries used
 =======
 
-* [React Native](https://www.npmjs.com/package/react-native)
-* [React](https://www.npmjs.com/package/react)
-* [React router native](https://www.npmjs.com/package/react-router-native)
-* [TypeScript](https://www.npmjs.com/package/typescript)
-* [React native carousel](https://www.npmjs.com/package/react-native-carousel)
-* [React native modal](https://www.npmjs.com/package/react-native-modal)
-* [React native vector icons](https://www.npmjs.com/package/react-native-vector-icons)
-* [React native splash screen](https://www.npmjs.com/package/react-native-splash-screen)
+* [React Native](https://www.npmjs.com/package/react-native) - A framework for building native apps with React.
+* [React](https://www.npmjs.com/package/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
+* [React router native](https://www.npmjs.com/package/react-router-native) - Declarative routing for React.
+* [TypeScript](https://www.npmjs.com/package/typescript) - TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
+* [React native carousel](https://www.npmjs.com/package/react-native-carousel) - A simple swipeable carousel for React Native
+* [React native modal](https://www.npmjs.com/package/react-native-modal) - An enhanced, animated and customizable react-native modal.
+* [React native vector icons](https://www.npmjs.com/package/react-native-vector-icons) - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.
+* [React native splash screen](https://www.npmjs.com/package/react-native-splash-screen) - A splash screen API for react-native which can programatically hide and show the splash screen.
 
 Steps to Run the Project in Development Mode
 =======

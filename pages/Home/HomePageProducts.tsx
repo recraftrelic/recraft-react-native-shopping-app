@@ -16,7 +16,7 @@ interface Props extends RouteComponentProps {
 const typeList = ["Woman", "Man", "Kids"]
 
 // @ts-ignore
-const ImagePath = require("../../shopping.jpg")
+const ImagePath = require("../../images/shopping.jpg")
 
 const HomePageProducts: React.FunctionComponent<Props> = ({
     history
