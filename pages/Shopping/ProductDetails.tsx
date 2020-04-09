@@ -20,7 +20,7 @@ interface Props extends RouteComponentProps {
 // @ts-ignore
 const ImagePath = require("../../images/shopping.jpg")
 // @ts-ignore
-const ImageShopping = require("../../shoppingGirl.jpg")
+const ImageShopping = require("../../images/shoppingGirl.jpg")
 
 const productData = {
     name: "Colorfull Styles Top",
