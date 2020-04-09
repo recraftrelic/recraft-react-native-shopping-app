@@ -11,7 +11,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import BackButton from '../../components/common/BackButton';
 
 // @ts-ignore
-const ImagePath = require("../../Recraftsoppify_aap_bg_effect.png")
+const ImagePath = require("../../images/Recraftsoppify_aap_bg_effect.png")
 
 interface Props extends RouteComponentProps {
   dispatch: Dispatch,

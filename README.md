@@ -1,4 +1,4 @@
-[<p align="center"><img width="150" src="./recraftshoping-app.png"></p>](https://github.com/recraftrelic/recraft-react-native-shopping-app/)
+[<p align="center"><img width="150" src="./images/recraftshoping-app.png"></p>](https://github.com/recraftrelic/recraft-react-native-shopping-app/)
 
 <h1 align="center">Recraft React Native Shopping App</h1>
 
