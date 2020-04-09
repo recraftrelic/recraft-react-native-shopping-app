@@ -42,6 +42,10 @@ export interface AppConstants {
     demoCartMsg: string,
     labelSubTotal: string,
     labelCheckout: string,
+    shipLabel: string,
+    labelPlace: string,
+    labelMethod: string,
+    labelCard: string,
 }
 
 export interface ApplicationConfig {
@@ -108,6 +112,10 @@ export const defaultConfig: ApplicationConfig = {
       demoCartMsg: "1 item added in your cart",
       labelSubTotal: "Sub-Total",
       labelCheckout: "Checkout",
+      labelPlace: "PLACE ORDER",
+      shipLabel: "PROCEED TO SHIPPING",
+      labelMethod: "Payment Method",
+      labelCard: "ADD CARD",
     },
     
 }
