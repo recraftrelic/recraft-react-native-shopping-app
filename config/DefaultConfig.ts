@@ -42,6 +42,10 @@ export interface AppConstants {
     demoCartMsg: string,
     labelSubTotal: string,
     labelCheckout: string,
+    shipLabel: string,
+    labelPlace: string,
+    labelMethod: string,
+    labelCard: string,
 }
 
 export interface ApplicationConfig {
@@ -78,7 +82,7 @@ export const lightTheme: AppTheme = {
 }
 
 // @ts-ignore
-const Logo = require("../recraftshoping-app-logo2.png")
+const Logo = require("../images/recraftshoping-app-logo2.png")
 
 export const defaultConfig: ApplicationConfig = {
     theme: lightTheme,
@@ -108,6 +112,10 @@ export const defaultConfig: ApplicationConfig = {
       demoCartMsg: "1 item added in your cart",
       labelSubTotal: "Sub-Total",
       labelCheckout: "Checkout",
+      labelPlace: "PLACE ORDER",
+      shipLabel: "PROCEED TO SHIPPING",
+      labelMethod: "Payment Method",
+      labelCard: "ADD CARD",
     },
     
 }

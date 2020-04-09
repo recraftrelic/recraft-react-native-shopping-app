@@ -53,7 +53,7 @@ const Bag: React.FunctionComponent<Props> = ({
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={style.checkoutButton}>
               <TouchableOpacity onPress={goToCheckout}>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>PROCEED TO SHIPPING</ThemedText>
+                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.shipLabel}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>

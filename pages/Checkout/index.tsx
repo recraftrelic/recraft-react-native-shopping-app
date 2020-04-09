@@ -115,7 +115,7 @@ const Checkout: React.FunctionComponent<Props> = ({
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={style.checkoutButton}>
               <TouchableOpacity>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>PLACE ORDER</ThemedText>
+                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.labelPlace}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>

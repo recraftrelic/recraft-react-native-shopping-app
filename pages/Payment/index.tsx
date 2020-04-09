@@ -35,7 +35,7 @@ const Payment: React.FunctionComponent<Props> = ({
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
-              <ThemedText styleKey="textColor" style={style.title}>Payment Method</ThemedText>
+              <ThemedText styleKey="textColor" style={style.title}>{constants.labelMethod}</ThemedText>
             </View>
           </View>
         </View>
@@ -86,7 +86,7 @@ const Payment: React.FunctionComponent<Props> = ({
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={style.checkoutButton}>
               <TouchableOpacity>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>ADD CARD</ThemedText>
+                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.labelCard}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>
