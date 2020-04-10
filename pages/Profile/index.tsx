@@ -3,27 +3,37 @@ import { RouteComponentProps } from 'react-router-native';
 import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
+import { connect } from "react-redux";
+import { Dispatch } from 'redux';
 import { View, ViewStyle, StyleSheet, TextStyle, TouchableOpacity, Image, ImageStyle, ScrollView} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
 import FooterNavigation from '../Footer/Index';
 import ProfileItem from '../../components/Base/ProfileItem';
+import { setThemeAction } from '../../store/reducers/config';
+import ThemeToggle from '../../components/Base/ThemeToggle';
 
 interface Props extends RouteComponentProps {
-  history
-}
+    dispatch: Dispatch
+    history
+}  
 
 // @ts-ignore
 const ImagePath = require("../../images/shopping.jpg")
 
 const Profile: React.FunctionComponent<Props> = ({
-  history
+    dispatch,
+    history
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
 
   const goToHome = () => {
     history.push('/home')
+  }
+
+  const updateTheme = (theme: AppTheme) => {
+    dispatch(setThemeAction(theme))
   }
 
   return (
@@ -74,6 +84,7 @@ const Profile: React.FunctionComponent<Props> = ({
             <ThemedText styleKey="textColor" style={{fontSize: 18}}>Dark Theme</ThemedText>
             </View>
             <View style={[style.childContainer, style.rightContainer]}>
+              <ThemeToggle updateTheme={updateTheme} />
             </View>
           </View>
         </View>
@@ -95,7 +106,7 @@ const Profile: React.FunctionComponent<Props> = ({
   );
 };
 
-export default Profile;
+export default connect(({ dispatch}) => ({ dispatch }))(Profile);
 
 interface Style {
   mainContainer: ViewStyle;
