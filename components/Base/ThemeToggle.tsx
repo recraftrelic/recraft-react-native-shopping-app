@@ -1,53 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { View, ViewStyle, StyleSheet, Switch, StatusBar } from 'react-native';
-import { AppTheme, lightTheme, darkTheme } from '../../config/DefaultConfig';
+import { Switch } from 'react-native';
+import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useTheme from '../../hooks/useTheme';
+import useConstants from '../../hooks/useConstants';
+import { ThemeKey } from '../../config/themes';
 
 interface Props {
-  updateTheme: (theme: AppTheme) => void
+  updateTheme: (theme: ThemeKey) => void;
 }
 
 const ThemeToggle: React.FunctionComponent<Props> = ({
   updateTheme
 }: Props) => {
   const theme: AppTheme = useTheme();
-
-  const [isDarkTheme, toggleDarkTheme] = useState<boolean>(false);
+  const { selectedTheme }: AppConstants = useConstants();
+  const [isDarkTheme, toggleDarkTheme] = useState<boolean>(selectedTheme == ThemeKey.dark);
 
   useEffect(() => {
-    updateTheme(isDarkTheme ? darkTheme : lightTheme)
+    const newSelectedTheme = isDarkTheme ? ThemeKey.dark : ThemeKey.light
+    updateTheme(newSelectedTheme)
   }, [isDarkTheme]);
 
   return (
-    <View>
-      <StatusBar barStyle={isDarkTheme ? "light-content" : "dark-content"} translucent={true} />
-      <View style={style.bottomContainer}>
-        <View style={style.childContainer}>
-          <Switch trackColor={{
-            false: theme.lightTextColor,
-            true: theme.lightTextColor
-          }} thumbColor={theme.textColor} value={isDarkTheme} onValueChange={toggleDarkTheme} />
-        </View>
-      </View>
-    </View>
+    <Switch trackColor={{
+      false: theme.lightTextColor,
+      true: theme.lightTextColor
+    }} thumbColor={theme.textColor} value={isDarkTheme} onValueChange={toggleDarkTheme} />
   )
 };
 
 export default ThemeToggle;
-
-interface Style {
-  childContainer: ViewStyle;
-  bottomContainer: ViewStyle;
-}
-
-const style: Style = StyleSheet.create<Style>({
-  bottomContainer: {
-    flexDirection: 'row',
-    justifyContent: "center",
-    paddingLeft: 10,
-  },
-  childContainer: {
-    flexDirection: 'row',
-    justifyContent: "center",
-  },
-});

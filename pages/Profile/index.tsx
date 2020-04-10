@@ -12,6 +12,7 @@ import FooterNavigation from '../Footer/Index';
 import ProfileItem from '../../components/Base/ProfileItem';
 import { setThemeAction } from '../../store/reducers/config';
 import ThemeToggle from '../../components/Base/ThemeToggle';
+import { ThemeKey } from '../../config/themes';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch
@@ -32,7 +33,7 @@ const Profile: React.FunctionComponent<Props> = ({
     history.push('/home')
   }
 
-  const updateTheme = (theme: AppTheme) => {
+  const updateTheme = (theme: ThemeKey) => {
     dispatch(setThemeAction(theme))
   }
 

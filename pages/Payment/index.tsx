@@ -59,24 +59,28 @@ const Payment: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.contentContainer}>
           <TextInput
-            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+            placeholderTextColor={theme.lightTextColor}
             placeholder="Name on Card"
           />
           <TextInput
-            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+            placeholderTextColor={theme.lightTextColor}
             placeholder="Card Number"
             secureTextEntry={true}
           />
           <View style={[style.container, {paddingLeft: 0, paddingRight: 0, paddingTop: 0}]}>
           <View style={[style.childContainer, style.leftContainer, {flex: 5, marginRight: 10}]}>
             <TextInput
-              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+              placeholderTextColor={theme.lightTextColor}
               placeholder="Exp Month"
             />
           </View>
           <View style={[style.childContainer, style.rightContainer, {flex: 5, marginLeft: 10}]}>
             <TextInput
-              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, paddingLeft: 5}]}
+              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor, paddingLeft: 5}]}
+              placeholderTextColor={theme.lightTextColor}
               placeholder="CVV"
             />
           </View>

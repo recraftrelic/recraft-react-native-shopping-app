@@ -1,3 +1,5 @@
+import { ThemeKey } from "./themes";
+
 export interface AppTheme {
   backgroundColor: string,
   highlightColor: string,
@@ -31,6 +33,7 @@ export interface advertisementType {
 }
 
 export interface AppConstants {
+    selectedTheme: ThemeKey,
     title: string,
     recraftLogo: string,
     labelLogin: string,
@@ -67,54 +70,15 @@ export interface AppConstants {
 }
 
 export interface ApplicationConfig {
-    theme?: AppTheme,
     constants?: AppConstants
-}
-
-export const darkTheme: AppTheme = {
-  backgroundColor: "#000000",
-  highlightColor: "grey",
-  highlightTextColor: "#ffffff",
-  buyButtonLink: "#ca2727",
-  textColor: "#fff",
-  lightTextColor: "#b3b3b3",
-  lightBottomColor: "#666666",
-  alternateMessageBackgroundColor: '#4682b4',
-  labelBgColor: "#fff",
-  activeColor: "activeColor",
-  dangerColor: "#e13e3d",
-  appColor: "#ec5c44",
-  facebookColor: '#39579a',
-  googleColor: '#e3384c',
-  inputColor: "#aaaaaa",
-  inputBorderColor: "#dadada",
-}
-
-export const lightTheme: AppTheme = {
-  backgroundColor: "#ffffff",
-  highlightColor: "grey",
-  highlightTextColor: "#ffffff",
-  buyButtonLink: "#ca2727",
-  textColor: "#333",
-  lightTextColor: "#b3b3b3",
-  lightBottomColor: "#e6e6e6",
-  alternateMessageBackgroundColor: '#B0E0E6',
-  labelBgColor: "#000",
-  activeColor: "#ec5c44",
-  dangerColor: "#e13e3d",
-  appColor: "#ec5c44",
-  facebookColor: '#39579a',
-  googleColor: '#e3384c',
-  inputColor: "#aaaaaa",
-  inputBorderColor: "#dadada",
 }
 
 // @ts-ignore
 const Logo = require("../images/recraftshoping-app-logo2.png")
 
 export const defaultConfig: ApplicationConfig = {
-    theme: lightTheme,
     constants: {
+      selectedTheme: ThemeKey.light,
       title: "RecraftShoppify",
       recraftLogo: Logo,
       labelLogin: "Login",

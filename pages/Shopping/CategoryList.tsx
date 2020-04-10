@@ -18,7 +18,7 @@ const CategoryList: React.FunctionComponent<Props> = ({}: Props) => {
         <View style={style.container}>
             <ScrollView style={style.typeList} horizontal={true} showsHorizontalScrollIndicator={false}>
                 {typeList.map((res, index) => {
-                    return <RoundButton key={index} buttonStyle={[style.typeListTab, { backgroundColor: theme.activeColor, borderColor: theme.activeColor }]} labelStyle={{ fontSize: 17, color: theme.highlightTextColor }} label={res} onPress={() => {alert(res)}} />
+                    return <RoundButton key={index} buttonStyle={[style.typeListTab, { backgroundColor: theme.appColor, borderColor: theme.appColor }]} labelStyle={{ fontSize: 17, color: theme.highlightTextColor }} label={res} onPress={() => {alert(res)}} />
                 })}
             </ScrollView>
         </View>
