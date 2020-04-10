@@ -1,6 +1,5 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
-import ThemeToggle from '../../components/Base/ThemeToggle';
 import { connect } from "react-redux";
 import { setThemeAction } from '../../store/reducers/config';
 import { Dispatch } from 'redux';
@@ -8,11 +7,9 @@ import { AppTheme, AppConstants } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
 import RoundButton from '../../components/Base/RoundButton';
-import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
-import BackButton from '../../components/common/BackButton';
 
 // @ts-ignore
 const ImagePath = require("../../images/Recraftsoppify_app_dashboard.jpg");
@@ -37,10 +34,6 @@ const BaseHome: React.FunctionComponent<Props> = ({
     history.push('/login')
   }
 
-  const backButton = () => {
-    history.push('/')
-  }
-
   const updateTheme = (theme: AppTheme) => dispatch(setThemeAction(theme))
 
   return (
@@ -58,11 +51,11 @@ const BaseHome: React.FunctionComponent<Props> = ({
                 <ThemedText style={style.footerText} styleKey="textColor">{"Or Sign Up With"}</ThemedText>
               </View>
               <View style={style.childContainer}>
-                <View style={[style.iconContainer, { backgroundColor: '#e3384c' }]}>
-                  <Icon name="google" size={30} color="#900" style={style.Icon} />
+                <View style={[style.iconContainer, { shadowColor: theme.labelBgColor, backgroundColor: theme.googleColor }]}>
+                  <Icon name="google" size={30} color={theme.highlightTextColor} style={style.Icon} />
                 </View>
-                <View style={[style.iconContainer, { backgroundColor: '#39579a' }]}>
-                  <Icon name="facebook" size={30} color="#900" style={[style.Icon]} />
+                <View style={[style.iconContainer, { shadowColor: theme.labelBgColor, backgroundColor: theme.facebookColor }]}>
+                  <Icon name="facebook" size={30} color={theme.highlightTextColor} style={[style.Icon]} />
                 </View>
               </View>
             </View>
@@ -81,12 +74,10 @@ interface Style {
   childContainer: ViewStyle;
   inputContainer: TextStyle;
   footerText: TextStyle;
-  title: TextStyle;
   Icon: TextStyle;
   iconContainer: ViewStyle;
   containerBg: ViewStyle;
   containerImage: ViewStyle;
-  backIcon: ViewStyle;
   button: ViewStyle;
   logoImage: ViewStyle;
 }
@@ -122,12 +113,6 @@ const style: Style = StyleSheet.create<Style>({
     justifyContent: 'center',
     alignItems: "center",
   },
-  title: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: "#54afee",
-    marginBottom: 130,
-  },
   button: {
     marginTop: 15,
     marginBottom: 22,
@@ -147,20 +132,11 @@ const style: Style = StyleSheet.create<Style>({
     margin: 12,
     minWidth: 50,
     shadowOffset: { width: 0, height: 8 },
-    shadowColor: 'black',
     shadowOpacity: 0.2,
-
   },
   Icon: {
     fontSize: 25,
     padding: 15,
-    color: '#fff',
     justifyContent: "center",
   },
-  backIcon: {
-    fontSize: 25,
-    position: 'absolute',
-    top: 20,
-    left: 10,
-  }
 });

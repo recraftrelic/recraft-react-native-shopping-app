@@ -1,10 +1,10 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
-import { Dispatch } from 'redux';
-import { Text, View, ViewStyle, StyleSheet, TextStyle, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
-import { AppConstants } from '../../config/DefaultConfig';
+import { Text, View, ViewStyle, StyleSheet, TextStyle, TouchableOpacity } from 'react-native';
+import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import useTheme from '../../hooks/useTheme';
 
 interface Props extends RouteComponentProps {
     history?: any
@@ -17,6 +17,7 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
     history
 }: Props) => {
     const constants: AppConstants = useConstants();
+    const theme: AppTheme = useTheme();
 
     const goToLogin = () => {
         history.push('/login')
@@ -43,35 +44,35 @@ const FooterNavigation: React.FunctionComponent<Props> = ({
     }
 
     return (
-        <View style={style.container}>
+        <View style={[style.container, {borderColor: theme.lightBottomColor, backgroundColor: theme.backgroundColor}]}>
             <TouchableOpacity onPress={backButton}>
-                <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="home" size={30} style={[style.Icon, { color: '#ec5c44' }]} />
-                    <Text style={[style.IconTitle, { color: '#ec5c44' }]}>{"Home"}</Text>
+                <View style={style.iconContainer}>
+                    <Icon name="home" size={30} color={theme.appColor} style={[style.Icon]} />
+                    <Text style={[style.IconTitle, { color: theme.appColor }]}>{"Home"}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToShopping}>
-                <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="shopping-cart" size={30} style={[style.Icon]} />
-                    <Text style={style.IconTitle}>{"Shop"}</Text>
+                <View style={style.iconContainer}>
+                    <Icon name="shopping-cart" size={30} color={theme.lightTextColor} style={[style.Icon]} />
+                    <Text style={[style.IconTitle, {color: theme.lightTextColor}]}>{"Shop"}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToBag}>
-                <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="shopping-bag" size={30} style={style.Icon} />
-                    <Text style={style.IconTitle}>{"Bag"}</Text>
+                <View style={style.iconContainer}>
+                    <Icon name="shopping-bag" size={30} color={theme.lightTextColor} style={style.Icon} />
+                    <Text style={[style.IconTitle, {color: theme.lightTextColor}]}>{"Bag"}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { alert("favorites")}}>
-                <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="heart" size={30} style={[style.Icon]} />
-                    <Text style={style.IconTitle}>{"Favorites"}</Text>
+                <View style={style.iconContainer}>
+                    <Icon name="heart" size={30} color={theme.lightTextColor} style={[style.Icon]} />
+                    <Text style={[style.IconTitle, {color: theme.lightTextColor}]}>{"Favorites"}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={goToProfile}>
                 <View style={[style.iconContainer, { backgroundColor: 'transparent' }]}>
-                    <Icon name="user" size={30} style={style.Icon} />
-                    <Text style={style.IconTitle}>{"Profile"}</Text>
+                    <Icon name="user" size={30} color={theme.lightTextColor} style={style.Icon} />
+                    <Text style={[style.IconTitle, {color: theme.lightTextColor}]}>{"Profile"}</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -94,7 +95,6 @@ const style: Style = StyleSheet.create<Style>({
     container: {
         flexDirection: 'row',
         justifyContent: "space-around",
-        backgroundColor: "#fff",
         position: 'absolute',
         paddingTop: 8,
         paddingBottom: 8,
@@ -103,18 +103,14 @@ const style: Style = StyleSheet.create<Style>({
         width: '100%',
         alignItems: 'center',
         borderTopWidth: 2,
-        borderColor: "#b3b3b3",
     },
     iconContainer: {
-        color: '#b3b3b3',
         alignItems: 'center'
     },
     Icon: {
         fontSize: 30,
-        color: '#b3b3b3',
     },
     IconTitle: {
-        color: '#b3b3b3',
         fontSize: 12,
     }
 });

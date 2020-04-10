@@ -32,11 +32,11 @@ const Checkout: React.FunctionComponent<Props> = ({
   return (
     <View style={style.mainContainer}>
       <ScrollView>
-        <View style={style.contentContainer}>
+        <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
           <View style={[style.container, {paddingBottom: 10}]}>
             <View style={[style.childContainer, style.leftContainer]}>
               <TouchableOpacity onPress={goToHome}>
-                <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+                <MaterialIcon name="arrow-left" size={30} color={theme.textColor} style={style.backIcon} />
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
@@ -52,12 +52,12 @@ const Checkout: React.FunctionComponent<Props> = ({
             </View>
             <View style={[style.childContainer, style.rightContainer, {flex: 1}]}>
               <TouchableOpacity>
-                <MaterialIcon name="chevron-right" size={30} color="#000" />
+                <MaterialIcon name="chevron-right" size={30} color={theme.textColor} />
               </TouchableOpacity>
             </View>
           </View>
         </View>
-        <View style={style.contentContainer}>
+        <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
           <View style={[style.container, {paddingTop: 20 ,paddingBottom: 5}]}>
             <View style={[style.childContainer, style.leftContainer, {flex: 2, paddingLeft: 5}]}>
               <ThemedText styleKey="textColor" style={style.content}>Card</ThemedText>
@@ -67,12 +67,12 @@ const Checkout: React.FunctionComponent<Props> = ({
             </View>
             <View style={[style.childContainer, style.rightContainer, {flex: 1}]}>
               <TouchableOpacity onPress={goToPayment}>
-                <MaterialIcon name="chevron-right" size={30} color="#000" />
+                <MaterialIcon name="chevron-right" size={30} color={theme.textColor} />
               </TouchableOpacity>
             </View>
           </View>
         </View>
-        <View style={style.contentContainer}>
+        <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
           <View style={[style.container, {paddingTop: 20}]}>
             <View style={[style.childContainer, style.leftContainer, {flex: 2, paddingLeft: 5, paddingTop: 60, justifyContent: 'flex-start'}]}>
               <ThemedText styleKey="textColor" style={style.content}>Items</ThemedText>
@@ -88,7 +88,7 @@ const Checkout: React.FunctionComponent<Props> = ({
                 </View>
                 <View style={[style.childContainer, style.rightContainer, {flex: 1}]}>
                   <TouchableOpacity>
-                    <MaterialIcon name="chevron-right" size={30} color="#000" />
+                    <MaterialIcon name="chevron-right" size={30} color={theme.textColor} />
                   </TouchableOpacity>
                 </View>
               </View>
@@ -102,7 +102,7 @@ const Checkout: React.FunctionComponent<Props> = ({
                 </View>
                 <View style={[style.childContainer, style.rightContainer, {flex: 1}]}>
                   <TouchableOpacity>
-                    <MaterialIcon name="chevron-right" size={30} color="#000" />
+                    <MaterialIcon name="chevron-right" size={30} color={theme.textColor} />
                   </TouchableOpacity>
                 </View>
               </View>
@@ -113,9 +113,9 @@ const Checkout: React.FunctionComponent<Props> = ({
         <BagOption label={constants.labelSubTotal} total="$25.98" />
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
-            <View style={style.checkoutButton}>
+            <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.labelPlace}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.labelPlace}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>
@@ -154,7 +154,6 @@ const style: Style = StyleSheet.create<Style>({
     contentContainer: {
         paddingBottom: 5,
         borderBottomWidth: 1,
-        borderColor: "#b3b3b3",
     },
     container: {
         paddingLeft: 10,
@@ -186,32 +185,26 @@ const style: Style = StyleSheet.create<Style>({
     backIcon: {
         fontSize: 25,
         paddingTop: 20,
-        color: '#000',
     },
     title: {
         fontSize: 25,
         paddingTop: 15,
-        color: '#000',
     },
     content: {
         fontSize: 14,
-        color: '#000',
     },
     smallContent: {
         fontSize: 12,
-        color: '#000',
         alignSelf: 'flex-start',
         paddingBottom: 20,
     },
     checkoutButton: {
-        backgroundColor: 'grey',
         borderRadius: 50,
         width: '80%',
         alignItems: 'center'
     },
     checkoutStyle: {
         fontSize: 16,
-        color: '#fff',
         padding: 10,
     },
     imageStyle :{

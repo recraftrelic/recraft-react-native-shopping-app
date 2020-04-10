@@ -31,7 +31,7 @@ const Payment: React.FunctionComponent<Props> = ({
           <View style={[style.container, {paddingBottom: 10 ,paddingLeft: 10}]}>
             <View style={[style.childContainer, style.leftContainer]}>
               <TouchableOpacity onPress={backPress}>
-                <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+                <MaterialIcon name="arrow-left" size={30} color={theme.textColor} style={style.backIcon} />
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
@@ -47,36 +47,36 @@ const Payment: React.FunctionComponent<Props> = ({
           </View>
           <View style={[style.container, {paddingLeft: 0, paddingRight: 0, paddingTop: 30}]}>
             <View style={[style.childContainer, style.leftContainer, {flex: 2}]}>
-              <View style={style.hairline} />
+              <View style={[style.hairline, {backgroundColor: theme.inputBorderColor}]} />
             </View>
             <View style={[style.childContainer, style.centerContainer, {flex: 1}]}>
               <ThemedText styleKey="textColor" style={style.content}>OR</ThemedText>
             </View>
             <View style={[style.childContainer, style.rightContainer, {flex: 2}]}>
-              <View style={style.hairline} />
+              <View style={[style.hairline, {backgroundColor: theme.inputBorderColor}]} />
             </View>
           </View>
         </View>
         <View style={style.contentContainer}>
           <TextInput
-            style={style.inputContainer}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
             placeholder="Name on Card"
           />
           <TextInput
-            style={style.inputContainer}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
             placeholder="Card Number"
             secureTextEntry={true}
           />
           <View style={[style.container, {paddingLeft: 0, paddingRight: 0, paddingTop: 0}]}>
           <View style={[style.childContainer, style.leftContainer, {flex: 5, marginRight: 10}]}>
             <TextInput
-              style={style.inputContainer}
+              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
               placeholder="Exp Month"
             />
           </View>
           <View style={[style.childContainer, style.rightContainer, {flex: 5, marginLeft: 10}]}>
             <TextInput
-              style={[style.inputContainer, {paddingLeft: 5}]}
+              style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, paddingLeft: 5}]}
               placeholder="CVV"
             />
           </View>
@@ -84,9 +84,9 @@ const Payment: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
-            <View style={style.checkoutButton}>
+            <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.labelCard}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.labelCard}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>
@@ -155,21 +155,17 @@ const style: Style = StyleSheet.create<Style>({
   backIcon: {
     fontSize: 25,
     paddingTop: 20,
-    color: '#000',
   },
   title: {
     fontSize: 25,
     paddingTop: 15,
-    color: '#000',
   },
   hairline: {
-    backgroundColor: '#dadada',
     height: 2,
     width: 165
   },
   content: {
     fontSize: 16,
-    color: '#000',
     padding: 10,
     alignSelf: 'center',
   },
@@ -178,21 +174,18 @@ const style: Style = StyleSheet.create<Style>({
     width: "100%",
     marginTop: 10,
     marginBottom: 10,
-    borderBottomColor: "#dadada",
     borderBottomWidth: 2,
     fontSize: 14,
     paddingLeft: 20,
     paddingRight: 20,
   },
   checkoutButton: {
-    backgroundColor: 'grey',
     borderRadius: 50,
     width: '80%',
     alignItems: 'center'
   },
   checkoutStyle: {
     fontSize: 16,
-    color: '#fff',
     padding: 10,
   },
 });

@@ -19,6 +19,7 @@ const BagItem: React.FunctionComponent<Props> = ({
     color
   }: Props) => {
     const constants: AppConstants = useConstants();
+    const theme: AppTheme = useTheme();
 
     return (
         <>
@@ -33,19 +34,19 @@ const BagItem: React.FunctionComponent<Props> = ({
                 </View>
                 <View style={[style.childContainer, style.rightContainer ,{flex: 1}]}>
                   <TouchableOpacity>
-                    <MaterialIcon name="trash-can-outline" size={20} color="#777" />
+                    <MaterialIcon name="trash-can-outline" size={20} color={theme.lightTextColor} />
                   </TouchableOpacity>
                 </View>
               </View>
               <View style={[style.container, {paddingTop: 20}]}>
                 <View style={[style.childContainer, style.leftContainer ,{flex: 1, }]}>
-                  <ThemedText styleKey="textColor" style={[style.content, { color: '#b3b3b3'}]}>Size</ThemedText>
+                  <ThemedText styleKey="lightTextColor" style={[style.content]}>Size</ThemedText>
                 </View>
                 <View style={[style.childContainer, style.leftContainer ,{flex: 1, }]}>
-                  <ThemedText styleKey="textColor" style={[style.content, { color: '#b3b3b3'}]}>Color</ThemedText>
+                  <ThemedText styleKey="lightTextColor" style={[style.content]}>Color</ThemedText>
                 </View>
                 <View style={[style.childContainer, style.leftContainer ,{flex: 1, }]}>
-                  <ThemedText styleKey="textColor" style={[style.content, { color: '#b3b3b3'}]}>Qty</ThemedText>
+                  <ThemedText styleKey="lightTextColor" style={[style.content]}>Qty</ThemedText>
                 </View>
               </View>
               <View style={style.container}>
@@ -61,7 +62,7 @@ const BagItem: React.FunctionComponent<Props> = ({
               </View>
               <View style={[style.container, {paddingTop: 20, paddingRight: 0}]}>
                 <View style={[style.childContainer, style.rightContainer, style.extraStyle]}>
-                  <ThemedText styleKey="textColor" style={style.strike}>$20.90</ThemedText>
+                  <ThemedText styleKey="lightTextColor" style={[style.strike]}>$20.90</ThemedText>
                 </View>
               </View>
               <View style={[style.container, {paddingRight: 0}]}>
@@ -111,15 +112,12 @@ interface Style {
     title: {
       fontSize: 25,
       paddingTop: 15,
-      color: '#000',
     },
     content: {
       fontSize: 14,
-      color: '#000',
     },
     strike: {
       fontSize: 12,
-      color: '#b3b3b3',
       textDecorationLine: 'line-through',
     },
     imageStyle :{
@@ -127,7 +125,7 @@ interface Style {
       height: 140,
     },
     extraStyle: {
-        flex: 3
+      flex: 3
     },
   });
   
