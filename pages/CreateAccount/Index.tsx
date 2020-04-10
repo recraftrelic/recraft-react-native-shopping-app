@@ -51,7 +51,8 @@ const CreateAccount: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.childContainer}>
           <TextInput
-            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+            placeholderTextColor={theme.lightTextColor}
             placeholder={constants.namePlaceholder}
           />
         </View>
@@ -60,7 +61,8 @@ const CreateAccount: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.childContainer}>
           <TextInput
-            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+            placeholderTextColor={theme.lightTextColor}
             placeholder={constants.emailPlaceholder}
           />
         </View>
@@ -69,7 +71,8 @@ const CreateAccount: React.FunctionComponent<Props> = ({
         </View>
         <View style={style.childContainer}>
           <TextInput
-            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor}]}
+            style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
+            placeholderTextColor={theme.lightTextColor}
             placeholder={constants.passPlaceholder}
             secureTextEntry={true}
           />

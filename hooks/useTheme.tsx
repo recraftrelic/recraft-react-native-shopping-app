@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { AppTheme, ApplicationConfig } from '../config/DefaultConfig';
-import ConfigContext from '../config/AppConfigProvider';
+import { AppTheme, AppConstants } from '../config/DefaultConfig';
+import useConstants from './useConstants';
+import { themes } from '../config/themes';
 
 const useTheme = (): AppTheme => {
-  const { theme }: ApplicationConfig = useContext(ConfigContext)
+  const { selectedTheme }: AppConstants = useConstants()
 
-  return theme;
+  return themes[selectedTheme];
 }
 
 export default useTheme;

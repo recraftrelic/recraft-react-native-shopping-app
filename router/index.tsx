@@ -25,7 +25,6 @@ interface Props {
 const Router: React.FunctionComponent<Props> = ({
   configReducer
 }: Props) => {
-  console.log(configReducer.theme)
   return (
     <ConfigContext.Provider value={configReducer}>
       <ThemedView style={style.container}>

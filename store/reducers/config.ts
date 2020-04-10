@@ -20,9 +20,9 @@ const configReducer: ConfigReducerType = handleActions(
         SET_THEME: (state, action) => {
             return {
                 ...state,
-                theme: {
-                    ...state,
-                    ...action.payload
+                constants: {
+                    ...state.constants,
+                    selectedTheme: action.payload
                 }
             };
         },
