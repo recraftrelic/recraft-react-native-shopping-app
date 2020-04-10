@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
-import { View, ViewStyle, StyleSheet, TextStyle, Image, Text, ScrollView } from 'react-native';
+import { View, ViewStyle, StyleSheet, ScrollView } from 'react-native';
 import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import RoundButton from '../../components/Base/RoundButton';
@@ -9,10 +9,6 @@ import useTheme from "../../hooks/useTheme";
 interface Props extends RouteComponentProps {}
 
 const typeList = ["Woman", "Man", "Kids"]
-
-// @ts-ignore
-const ImagePath = require("../../images/shopping.jpg")
-
 
 const CategoryList: React.FunctionComponent<Props> = ({}: Props) => {
     const constants: AppConstants = useConstants();

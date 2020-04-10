@@ -1,13 +1,11 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-native';
 import { Dispatch } from 'redux';
-import { View, ViewStyle, StyleSheet, TextStyle, ImageBackground, Text, ScrollView } from 'react-native';
+import { View, ViewStyle, StyleSheet, ScrollView } from 'react-native';
 import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
-import RoundButton from '../../components/Base/RoundButton';
 import FooterNavigation from '../Footer/Index';
 import useTheme from "../../hooks/useTheme";
-import HomePageProducts from '../Home/HomePageProducts';
 import CategoryList from './CategoryList'
 import ListedItem from './ListedItem'
 import ProductAdvertisement from './ProductAdvertisement';
@@ -17,8 +15,6 @@ interface Props extends RouteComponentProps {
     history
 }
 
-// @ts-ignore
-const ImagePath = require("../../images/shopping.jpg")
 // @ts-ignore
 const advertisementImage = require("../../images/shoppingFlipkart.jpg")
 

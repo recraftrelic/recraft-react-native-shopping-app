@@ -23,7 +23,7 @@ const ProductAdvertisement: React.FunctionComponent<Props> = ({
     const theme: AppTheme = useTheme();
 
     return (
-        <View key={key} style={style.newItemBox}>
+        <View key={key} style={[style.newItemBox, {shadowColor: theme.labelBgColor, backgroundColor: theme.appColor}]}>
             <Image style={[style.newItem]} source={imageUrl} />
             {(label1 || label2) ? 
             <View style={[style.itemTitleLabel]}>
@@ -63,9 +63,7 @@ const style: Style = StyleSheet.create<Style>({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: "#ec5c44",
         shadowOffset: { width: 2, height: 3 },
-        shadowColor: 'black',
         shadowOpacity: 0.2,
         borderWidth: 0.1,
         elevation: 4,

@@ -15,12 +15,13 @@ const BagOption: React.FunctionComponent<Props> = ({
     total
   }: Props) => {
     const constants: AppConstants = useConstants();
+    const theme: AppTheme = useTheme();
     return (
         <>
-          <View style={style.contentContainer}>
+          <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
             <View style={style.container}>
               <View style={[style.childContainer, style.leftContainer]}>
-                <ThemedText styleKey="textColor" style={[style.content, {color: 'grey'}]}>{label}</ThemedText>
+                <ThemedText styleKey="textColor" style={[style.content, {color: theme.highlightColor}]}>{label}</ThemedText>
               </View>
               <View style={[style.childContainer, style.rightContainer]}>
                 <ThemedText styleKey="textColor" style={style.content}>{total}</ThemedText>
@@ -46,7 +47,6 @@ interface Style {
     contentContainer: {
       paddingBottom: 10,
       borderBottomWidth: 1,
-      borderColor: "#b3b3b3",
     },
     container: {
       paddingLeft: 15,
@@ -69,7 +69,6 @@ interface Style {
     content: {
       fontSize: 14,
       paddingTop: 10,
-      color: '#000',
     },
   });
   
