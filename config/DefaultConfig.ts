@@ -10,6 +10,11 @@ export interface AppTheme {
   labelBgColor: string,
   activeColor: string,
   dangerColor: string,
+  appColor: string,
+  facebookColor: string,
+  googleColor: string,
+  inputColor: string,
+  inputBorderColor: string,
 }
 
 export interface HomePageType {
@@ -46,6 +51,18 @@ export interface AppConstants {
     labelPlace: string,
     labelMethod: string,
     labelCard: string,
+    labelName: string,
+    labelEmail: string,
+    labelUser: string,
+    labelPass: string,
+    labelCheckAcc: string,
+    labelChoice: string,
+    labelSubmit: string,
+    namePlaceholder: string,
+    emailPlaceholder: string,
+    userPlaceholder: string,
+    passPlaceholder: string,
+    labelForget: string,
 }
 
 export interface ApplicationConfig {
@@ -65,6 +82,11 @@ export const darkTheme: AppTheme = {
   labelBgColor: "#fff",
   activeColor: "activeColor",
   dangerColor: "#e13e3d",
+  appColor: "#ec5c44",
+  facebookColor: '#39579a',
+  googleColor: '#e3384c',
+  inputColor: "#aaaaaa",
+  inputBorderColor: "#dadada",
 }
 
 export const lightTheme: AppTheme = {
@@ -79,6 +101,11 @@ export const lightTheme: AppTheme = {
   labelBgColor: "#000",
   activeColor: "#ec5c44",
   dangerColor: "#e13e3d",
+  appColor: "#ec5c44",
+  facebookColor: '#39579a',
+  googleColor: '#e3384c',
+  inputColor: "#aaaaaa",
+  inputBorderColor: "#dadada",
 }
 
 // @ts-ignore
@@ -116,6 +143,17 @@ export const defaultConfig: ApplicationConfig = {
       shipLabel: "PROCEED TO SHIPPING",
       labelMethod: "Payment Method",
       labelCard: "ADD CARD",
+      labelName: "Name",
+      labelEmail: "Email",
+      labelUser: "Username",
+      labelPass: "Password",
+      labelCheckAcc: "Already have an account?",
+      labelChoice: "Or Login With",
+      labelSubmit: "SUBMIT",
+      namePlaceholder: "Enter Name",
+      emailPlaceholder: "Enter Email",
+      userPlaceholder: "User Name",
+      passPlaceholder: "Enter Password",
+      labelForget: "Forget your password?",
     },
-    
 }

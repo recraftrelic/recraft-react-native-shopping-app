@@ -31,29 +31,29 @@ const Bag: React.FunctionComponent<Props> = ({
   return (
     <View style={style.mainContainer}>
       <ScrollView>
-        <View style={style.contentContainer}>
+        <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
           <View style={[style.container, {paddingBottom: 10, paddingLeft: 10}]}>
             <View style={[style.childContainer, style.leftContainer]}>
               <TouchableOpacity onPress={goToHome}>
-                <MaterialIcon name="arrow-left" size={30} color="#900" style={style.backIcon} />
+                <MaterialIcon name="arrow-left" size={30} color={theme.textColor} style={style.backIcon} />
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
               <ThemedText styleKey="textColor" style={style.title}>{constants.labelBag}</ThemedText>
             </View>
           </View>
-          <BagItem size="M" color="#b3b3b3"/>
+          <BagItem size="M" color={theme.lightTextColor}/>
         </View>
-        <View style={style.contentContainer}>
-          <BagItem size="L" color="red"/>
+        <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
+          <BagItem size="L" color={theme.dangerColor}/>
         </View>
         <BagOption label={constants.labelDelivery} total="Standard - Free" />
         <BagOption label={constants.labelTotal} total="$25.98" />
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
-            <View style={style.checkoutButton}>
+            <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity onPress={goToCheckout}>
-                <ThemedText styleKey="textColor" style={style.checkoutStyle}>{constants.shipLabel}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.shipLabel}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>
@@ -89,7 +89,6 @@ const style: Style = StyleSheet.create<Style>({
   contentContainer: {
     paddingBottom: 20,
     borderBottomWidth: 1,
-    borderColor: "#b3b3b3",
   },
   container: {
     paddingLeft: 15,
@@ -117,22 +116,18 @@ const style: Style = StyleSheet.create<Style>({
   backIcon: {
     fontSize: 25,
     paddingTop: 20,
-    color: '#000',
   },
   title: {
     fontSize: 25,
     paddingTop: 15,
-    color: '#000',
   },
   checkoutButton: {
-    backgroundColor: 'grey',
     borderRadius: 50,
     paddingLeft: 50,
     paddingRight: 50
   },
   checkoutStyle: {
     fontSize: 16,
-    color: '#fff',
     padding: 10,
   },
 });

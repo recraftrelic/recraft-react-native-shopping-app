@@ -1,6 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-native';
-import { View, ViewStyle, StyleSheet, TextStyle, Image, Text, ScrollView } from 'react-native';
+import { View, ViewStyle, StyleSheet, TextStyle, Text, ScrollView } from 'react-native';
 import { AppConstants, AppTheme } from '../../config/DefaultConfig';
 import useConstants from '../../hooks/useConstants';
 import useTheme from "../../hooks/useTheme";
@@ -56,7 +55,7 @@ const Shopping: React.FunctionComponent<Props> = ({
                             />
                             <View style={style.productInfo}>
                                 <Text style={style.productInfoText}>{res.name}</Text>
-                                <Text style={[style.productInfoText, { color: 'red' }]}>Price {res.currency + res.price}</Text>
+                                <Text style={[style.productInfoText, { color: theme.dangerColor }]}>Price {res.currency + res.price}</Text>
                             </View>
                         </View>
                         )
