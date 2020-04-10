@@ -1,4 +1,5 @@
 import { ThemeKey } from "./themes";
+import { LanguageKey } from "./languages";
 
 export interface AppTheme {
   backgroundColor: string,
@@ -34,6 +35,7 @@ export interface advertisementType {
 
 export interface AppConstants {
     selectedTheme: ThemeKey,
+    selectedLanguage: LanguageKey,
     title: string,
     recraftLogo: string,
     labelLogin: string,
@@ -44,7 +46,6 @@ export interface AppConstants {
     labelAddToCard: string,
     labelBuyNow: string,
     labelBag: string,
-    labelProfile: string,
     labelDelivery: string,
     labelTotal: string,
     labelSuccess: string,
@@ -79,6 +80,7 @@ const Logo = require("../images/recraftshoping-app-logo2.png")
 export const defaultConfig: ApplicationConfig = {
     constants: {
       selectedTheme: ThemeKey.light,
+      selectedLanguage: LanguageKey.en,
       title: "RecraftShoppify",
       recraftLogo: Logo,
       labelLogin: "Login",
@@ -98,7 +100,6 @@ export const defaultConfig: ApplicationConfig = {
       labelAddToCard: "ADD TO CARD",
       labelBuyNow: "BUY NOW",
       labelBag: "My Bag", 
-      labelProfile: "My Profile",
       labelDelivery: "Delivery",
       labelTotal: "Total",
       labelSuccess: "SUCCESS !",
