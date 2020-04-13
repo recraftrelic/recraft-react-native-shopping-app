@@ -7,6 +7,8 @@ import { View, ViewStyle, StyleSheet, TextStyle, TouchableOpacity, ScrollView, I
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
 import BagOption from '../../components/Base/BagOption';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
   history
@@ -20,6 +22,7 @@ const Checkout: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const goToHome = () => {
     history.goBack();
@@ -40,7 +43,7 @@ const Checkout: React.FunctionComponent<Props> = ({
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
-              <ThemedText styleKey="textColor" style={style.title}>{constants.labelCheckout}</ThemedText>
+              <ThemedText styleKey="textColor" style={style.title}>{language.labelCheckout}</ThemedText>
             </View>
           </View>
           <View style={[style.container, {paddingTop: 30}]}>
@@ -109,13 +112,13 @@ const Checkout: React.FunctionComponent<Props> = ({
             </View>
           </View>
         </View>
-        <BagOption label={constants.labelDelivery} total="$0.0" />
-        <BagOption label={constants.labelSubTotal} total="$25.98" />
+        <BagOption label={language.labelDelivery} total="$0.0" />
+        <BagOption label={language.labelSubTotal} total="$25.98" />
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity>
-                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.labelPlace}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{language.labelPlace}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>

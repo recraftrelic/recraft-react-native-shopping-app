@@ -6,6 +6,8 @@ import useTheme from "../../hooks/useTheme";
 import { View, ViewStyle, StyleSheet, TextStyle, TouchableOpacity, ScrollView, Image, TextInput} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
   history
@@ -19,6 +21,7 @@ const Payment: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const backPress = () => {
     history.goBack();
@@ -35,7 +38,7 @@ const Payment: React.FunctionComponent<Props> = ({
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
-              <ThemedText styleKey="textColor" style={style.title}>{constants.labelMethod}</ThemedText>
+              <ThemedText styleKey="textColor" style={style.title}>{language.labelMethod}</ThemedText>
             </View>
           </View>
         </View>
@@ -90,7 +93,7 @@ const Payment: React.FunctionComponent<Props> = ({
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity>
-                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.labelCard}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{language.labelCard}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>

@@ -9,6 +9,8 @@ import useTheme from "../../hooks/useTheme";
 import CarouselComponent from '../../components/common/Carousel';
 import BackButton from '../../components/common/BackButton';
 import CommonModal from '../../components/Modal/CommonModal';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 var screenWidth = Dimensions.get('window').width; //full width
 
@@ -36,6 +38,7 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 }: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
+    const language: AppLanguage = useLanguage();
     const [open, setOpen] = useState(false);
 
     const backButton = () => {
@@ -99,8 +102,8 @@ const ProductDetails: React.FunctionComponent<Props> = ({
 
             </View>
             <View style={style.row3}>
-                <RoundButton label={constants.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
-                <RoundButton label={constants.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={checkout}/>
+                <RoundButton label={language.labelAddToCard} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={openModal}/>
+                <RoundButton label={language.labelBuyNow} buttonStyle={[style.productButton, {backgroundColor: theme.highlightColor}]} onPress={checkout}/>
             </View>
             <CommonModal 
                 isOpen={open}

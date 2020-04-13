@@ -13,7 +13,35 @@ export enum LanguageKey {
 }
 
 export interface AppLanguage {
+  labelLogin: string,
+  createAccountLabel: string,
+  labelCheck: string,
+  labelAddToCard: string,
+  labelBuyNow: string,
+  labelBag: string,
   labelProfile: string,
+  labelDelivery: string,
+  labelTotal: string,
+  labelSuccess: string,
+  demoCartMsg: string,
+  labelSubTotal: string,
+  labelCheckout: string,
+  labelPlace: string,
+  shipLabel: string,
+  labelMethod: string,
+  labelCard: string,
+  labelName: string,
+  labelEmail: string,
+  labelUser: string,
+  labelPass: string,
+  labelCheckAcc: string,
+  labelChoice: string,
+  labelSubmit: string,
+  namePlaceholder: string,
+  emailPlaceholder: string,
+  userPlaceholder: string,
+  passPlaceholder: string,
+  labelForget: string,
 }
 
 export interface LanguagesMap {

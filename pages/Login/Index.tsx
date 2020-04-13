@@ -9,6 +9,8 @@ import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import useTheme from '../../hooks/useTheme';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 // @ts-ignore
 const ImagePath = require("../../images/Recraftsoppify_aap_bg_effect.png")
@@ -23,6 +25,7 @@ const Login: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const backButton = () => {
     history.push('/')
@@ -40,35 +43,35 @@ const Login: React.FunctionComponent<Props> = ({
       <ScrollView>
         <View style={style.container}>
           <View style={style.topContainer}>
-            <ThemedText styleKey="appColor" style={style.title}>{constants.labelLogin}</ThemedText>
+            <ThemedText styleKey="appColor" style={style.title}>{language.labelLogin}</ThemedText>
           </View>
           <View style={style.childContainer}>
-            <ThemedText style={style.inputLabel} styleKey="inputColor">{constants.labelUser}</ThemedText>
+            <ThemedText style={style.inputLabel} styleKey="inputColor">{language.labelUser}</ThemedText>
           </View>
           <View style={style.childContainer}>
             <TextInput
               style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
               placeholderTextColor={theme.lightTextColor}
-              placeholder={constants.userPlaceholder}
+              placeholder={language.userPlaceholder}
             />
           </View>
           <View style={style.childContainer}>
-            <ThemedText style={style.inputLabel} styleKey="inputColor">{constants.labelPass}</ThemedText>
+            <ThemedText style={style.inputLabel} styleKey="inputColor">{language.labelPass}</ThemedText>
           </View>
           <View style={style.childContainer}>
             <TextInput
               style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
               placeholderTextColor={theme.lightTextColor}
-              placeholder={constants.passPlaceholder}
+              placeholder={language.passPlaceholder}
               secureTextEntry={true}
             />
           </View>
           <View style={style.childContainer}>
-            <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{constants.labelForget}</ThemedText>
+            <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={() => { alert("ji") }}>{language.labelForget}</ThemedText>
           </View>
-          <RoundButton label={constants.labelSubmit} buttonStyle={{minWidth: 230}} onPress={submitButton} />
+          <RoundButton label={language.labelSubmit} buttonStyle={{minWidth: 230}} onPress={submitButton} />
           <View style={style.childContainer}>
-            <ThemedText style={style.forgotPassword} styleKey="textColor">{constants.labelChoice}</ThemedText>
+            <ThemedText style={style.forgotPassword} styleKey="textColor">{language.labelChoice}</ThemedText>
           </View>
           <View style={style.childContainer}>
             <View style={[style.iconContainer, { shadowColor: theme.labelBgColor, backgroundColor: theme.googleColor }]}>
