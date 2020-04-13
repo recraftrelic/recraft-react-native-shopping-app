@@ -9,6 +9,8 @@ import RoundButton from '../../components/Base/RoundButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import useTheme from '../../hooks/useTheme';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -23,6 +25,7 @@ const CreateAccount: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const goToLogin = () => {
     history.push('/login')
@@ -44,45 +47,45 @@ const CreateAccount: React.FunctionComponent<Props> = ({
       <ScrollView style={style.mainContainer}>
       <View style={style.container}>
         <View style={style.topContainer}>
-          <ThemedText styleKey="appColor" style={style.title}>{constants.createAccountLabel}</ThemedText>
+          <ThemedText styleKey="appColor" style={style.title}>{language.createAccountLabel}</ThemedText>
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="inputColor">{constants.labelName}</ThemedText>
+          <ThemedText style={style.inputLabel} styleKey="inputColor">{language.labelName}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <TextInput
             style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
             placeholderTextColor={theme.lightTextColor}
-            placeholder={constants.namePlaceholder}
+            placeholder={language.namePlaceholder}
           />
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="inputColor">{constants.labelUser}</ThemedText>
+          <ThemedText style={style.inputLabel} styleKey="inputColor">{language.labelUser}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <TextInput
             style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
             placeholderTextColor={theme.lightTextColor}
-            placeholder={constants.emailPlaceholder}
+            placeholder={language.emailPlaceholder}
           />
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.inputLabel} styleKey="inputColor">{constants.labelPass}</ThemedText>
+          <ThemedText style={style.inputLabel} styleKey="inputColor">{language.labelPass}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <TextInput
             style={[style.inputContainer, {borderBottomColor: theme.inputBorderColor, color: theme.textColor}]}
             placeholderTextColor={theme.lightTextColor}
-            placeholder={constants.passPlaceholder}
+            placeholder={language.passPlaceholder}
             secureTextEntry={true}
           />
         </View>
         <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={goToLogin}>{constants.labelCheckAcc}</ThemedText>
+          <ThemedText style={style.forgotPassword} styleKey="textColor" onPress={goToLogin}>{language.labelCheckAcc}</ThemedText>
         </View>
-        <RoundButton label={constants.labelSubmit} buttonStyle={{minWidth: 230}} onPress={gotoHome} />
+        <RoundButton label={language.labelSubmit} buttonStyle={{minWidth: 230}} onPress={gotoHome} />
         <View style={style.childContainer}>
-          <ThemedText style={style.forgotPassword} styleKey="textColor">{constants.labelChoice}</ThemedText>
+          <ThemedText style={style.forgotPassword} styleKey="textColor">{language.labelChoice}</ThemedText>
         </View>
         <View style={style.childContainer}>
           <View style={[style.iconContainer, { shadowColor: theme.labelBgColor, backgroundColor: theme.googleColor }]}>

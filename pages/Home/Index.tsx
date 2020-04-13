@@ -8,6 +8,8 @@ import RoundButton from '../../components/Base/RoundButton';
 import FooterNavigation from '../Footer/Index';
 import useTheme from "../../hooks/useTheme";
 import HomePageProducts from './HomePageProducts';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch,
@@ -22,6 +24,7 @@ const Home: React.FunctionComponent<Props> = ({
 }: Props) => {
     const constants: AppConstants = useConstants();
     const theme: AppTheme = useTheme();
+    const language: AppLanguage = useLanguage();
 
     const gotoProducts = () => {
         history.push('/shopping')
@@ -34,7 +37,7 @@ const Home: React.FunctionComponent<Props> = ({
                     <View style={style.fistViewContent}>
                         <Text style={[style.fistViewText, { color: theme.labelBgColor }]}>{constants.homePage.labelFashion}</Text>
                         <Text style={[style.fistViewText, { color: theme.labelBgColor }]}>{constants.homePage.labelSave}</Text>
-                        <RoundButton buttonStyle={[style.fistViewButton, { backgroundColor: theme.dangerColor, borderColor: theme.dangerColor }]} labelStyle={{ fontSize: 17, color: theme.labelBgColor }} label={constants.labelCheck} onPress={gotoProducts} />
+                        <RoundButton buttonStyle={[style.fistViewButton, { backgroundColor: theme.dangerColor, borderColor: theme.dangerColor }]} labelStyle={{ fontSize: 17, color: theme.labelBgColor }} label={language.labelCheck} onPress={gotoProducts} />
                     </View>
                 </ImageBackground>
             </View>

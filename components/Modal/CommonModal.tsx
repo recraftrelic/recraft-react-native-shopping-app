@@ -6,6 +6,8 @@ import useTheme from '../../hooks/useTheme';
 import Modal from 'react-native-modal';
 import RoundButton from '../Base/RoundButton';
 import useConstants from '../../hooks/useConstants';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props {
     hideModal?: () => void;
@@ -20,6 +22,7 @@ const CommonModal: React.FunctionComponent<Props> = ({
 }) => {
     const theme: AppTheme = useTheme();
     const constants: AppConstants = useConstants();
+    const language: AppLanguage = useLanguage();
 
     return (
         <View>
@@ -31,9 +34,9 @@ const CommonModal: React.FunctionComponent<Props> = ({
                 <View style={[style.successBox, { backgroundColor: theme.textColor }]}>
                     <MaterialIcon name="shopping" size={50} style={[style.successIcon, { color: theme.backgroundColor }]} />
                 </View>
-                <Text style={style.msg}>{constants.demoCartMsg}</Text>
-                <Text style={style.successText}>{constants.labelSuccess}</Text>
-                <RoundButton label={constants.labelCheckout.toUpperCase()} buttonStyle={[style.checkOutButton, { backgroundColor: theme.highlightColor }]} onPress={submit}/>
+                <Text style={style.msg}>{language.demoCartMsg}</Text>
+                <Text style={style.successText}>{language.labelSuccess}</Text>
+                <RoundButton label={language.labelCheckout.toUpperCase()} buttonStyle={[style.checkOutButton, { backgroundColor: theme.highlightColor }]} onPress={submit}/>
             </View>
         </Modal>
         </View>

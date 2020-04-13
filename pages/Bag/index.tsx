@@ -9,6 +9,8 @@ import ThemedText from '../../components/UI/ThemedText';
 import FooterNavigation from '../Footer/Index';
 import BagItem from '../../components/Base/BagItem';
 import BagOption from '../../components/Base/BagOption';
+import { AppLanguage } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
   history
@@ -19,6 +21,7 @@ const Bag: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const goToHome = () => {
     history.push('/home')
@@ -39,7 +42,7 @@ const Bag: React.FunctionComponent<Props> = ({
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
-              <ThemedText styleKey="textColor" style={style.title}>{constants.labelBag}</ThemedText>
+              <ThemedText styleKey="textColor" style={style.title}>{language.labelBag}</ThemedText>
             </View>
           </View>
           <BagItem size="M" color={theme.lightTextColor}/>
@@ -47,13 +50,13 @@ const Bag: React.FunctionComponent<Props> = ({
         <View style={[style.contentContainer, {borderColor: theme.lightTextColor}]}>
           <BagItem size="L" color={theme.dangerColor}/>
         </View>
-        <BagOption label={constants.labelDelivery} total="Standard - Free" />
-        <BagOption label={constants.labelTotal} total="$25.98" />
+        <BagOption label={language.labelDelivery} total="Standard - Free" />
+        <BagOption label={language.labelTotal} total="$25.98" />
         <View style={style.footerContainer}>
           <View style={[style.childContainer, style.centerContainer]}>
             <View style={[style.checkoutButton, {backgroundColor: theme.highlightColor}]}>
               <TouchableOpacity onPress={goToCheckout}>
-                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{constants.shipLabel}</ThemedText>
+                <ThemedText styleKey="highlightTextColor" style={style.checkoutStyle}>{language.shipLabel}</ThemedText>
               </TouchableOpacity>
             </View>
           </View>
