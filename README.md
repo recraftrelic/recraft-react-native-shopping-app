@@ -7,7 +7,7 @@
 Note
 =======
 
-> You can also get the app on play store 
+> You can also get the app on play store https://play.google.com/store/apps/details?id=com.recraftreactnativebaseapp
 
 IOS Demo
 =======
