@@ -10,9 +10,12 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ThemedText from '../../components/UI/ThemedText';
 import FooterNavigation from '../Footer/Index';
 import ProfileItem from '../../components/Base/ProfileItem';
-import { setThemeAction } from '../../store/reducers/config';
+import { setThemeAction, setLanguageAction } from '../../store/reducers/config';
 import ThemeToggle from '../../components/Base/ThemeToggle';
+import LanguageSelector from '../../components/Base/LanguageSelector';
 import { ThemeKey } from '../../config/themes';
+import { AppLanguage, LanguageKey } from '../../config/languages';
+import useLanguage from '../../hooks/useLanguage';
 
 interface Props extends RouteComponentProps {
     dispatch: Dispatch
@@ -28,6 +31,7 @@ const Profile: React.FunctionComponent<Props> = ({
 }: Props) => {
   const constants: AppConstants = useConstants();
   const theme: AppTheme = useTheme();
+  const language: AppLanguage = useLanguage();
 
   const goToHome = () => {
     history.push('/home')
@@ -35,6 +39,10 @@ const Profile: React.FunctionComponent<Props> = ({
 
   const updateTheme = (theme: ThemeKey) => {
     dispatch(setThemeAction(theme))
+  }
+
+  const updateLanguage = (language: LanguageKey) => {
+    dispatch(setLanguageAction(language))
   }
 
   return (
@@ -48,7 +56,7 @@ const Profile: React.FunctionComponent<Props> = ({
               </TouchableOpacity>
             </View>
             <View style={[style.childContainer, style.centerContainer]}>
-              <ThemedText styleKey="textColor" style={style.title}>{constants.labelProfile}</ThemedText>
+              <ThemedText styleKey="textColor" style={style.title}>{language.labelProfile}</ThemedText>
             </View>
           </View>
         </View>
@@ -76,6 +84,7 @@ const Profile: React.FunctionComponent<Props> = ({
             <ThemedText styleKey="textColor" style={{fontSize: 18}}>Default Language</ThemedText>
             </View>
             <View style={[style.childContainer, style.rightContainer]}>
+              <LanguageSelector updateLanguage={updateLanguage} />
             </View>
           </View>
         </View>
