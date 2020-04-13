@@ -21,6 +21,9 @@ const LanguageSelector: React.FunctionComponent<Props> = ({
   const languages = [
     { label: 'English', value: 'en' },
     { label: 'French', value: 'fr' },
+    { label: 'German', value: 'gr' },
+    { label: 'Spanish', value: 'sp' },
+    { label: 'Chinese', value: 'ch' },
   ];
 
   useEffect(() => {
@@ -33,7 +36,7 @@ const LanguageSelector: React.FunctionComponent<Props> = ({
   }
 
   return (
-    <RNPickerSelect style={{inputIOS:{color: theme.lightTextColor},inputAndroid:{color: theme.lightTextColor}}} value={language} onValueChange={(value) => onChangeLanguage(value)} items={languages} useNativeAndroidPickerStyle={false}/>
+    <RNPickerSelect style={{inputIOS:{color: theme.lightTextColor},inputAndroid:{color: theme.lightTextColor, padding: 0, paddingRight: 40}}} value={language} onValueChange={(value) => onChangeLanguage(value)} items={languages} useNativeAndroidPickerStyle={false}/>
   )
 };
 
